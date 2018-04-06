@@ -1,0 +1,17 @@
+{% extends "baza.html" %}
+{% block title %}Moje konto{% endblock %}
+{% block content %}
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+
+    <form class = "form-horizontal" action= "" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'form_template.html' %}
+        <button type="submit" class="btn btn-success">Zapisz</button>
+    </form>
+
+
+
+{% endblock %}

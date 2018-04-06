@@ -1,0 +1,22 @@
+{% extends "baza.html" %}
+
+{% block title %}Moje konto{% endblock %}
+{% block content %}
+    {% load staticfiles %}
+<br>
+    <div class="col-md-8 text-left">
+        <h2>Twoja nazwa użytkownika: <b>{{ user}}</b></h2>
+        <h2>Adres email: <b>{{ user.email }} </b></h2>
+        <h2>Data utworzenia konta: <b>{{ user.date_joined}}</b> </h2>
+    </div>
+    <div class="col-md-8 text-left">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <div class="formularz">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="zapisz">Zmień</button>
+            </form>
+    </div>
+    <span class="glyphicon glyphicon-plus">polp</span>
+{% endblock %}

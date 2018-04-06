@@ -1,0 +1,44 @@
+
+{% extends "baza.html" %}
+
+{% block title %}komiks{% endblock %}
+{% block content %}
+    <span style="position:static; font-style: italic; font-weight: bold; font-size: 100%;">{% load static %}
+    <h1>Stworzony komiks </h1>
+
+
+
+        <img src =  "{{ elementy.background.url }}" class= "img responsive" height="500" width="500">
+
+        <!--
+        <div id="image-container">
+        <img src =  "{{ elementy.chat1.url }}" class= "img responsive">
+        <img src =  "{{ elementy.chat2.url }}" class= "img responsive">
+        </div>
+        <div id="image-container">
+        <img src =  "{{ elementy.character1.url }}" class= "img responsive">
+        <img src =  "{{ elementy.character2.url }}" class= "img responsive">
+        </div>!-->
+
+    <br>
+
+    {% if user.is_authenticated %}
+
+
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="fields-title">
+        {{ form.as_p }}
+
+
+        <button id = "sub" name = "sub" class = "zapisz" >Zapisz</button><br>
+            </div>
+        </form>
+
+
+    {% endif %}
+
+    Wróć do <a href="{% url 'delete_elementy' elementy.id %}">wybierania elementów</a><br>
+     Wróć na stronę <a href="{% url 'home' %}">główną</a>
+
+{% endblock %}

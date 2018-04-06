@@ -1,0 +1,99 @@
+.navbar-brand {
+    font-family: 'Peralta', cursive;
+}
+
+body {
+    background-color: #60f671;
+    text-align: center;
+    color : #000007;
+    font-size : 20px;
+}
+
+#image-container {
+    display: flex;
+    font-size : 30px;
+    margin:20px;
+
+}
+
+#sub {
+    size: 50px;
+}
+
+div.fields-title label {
+    font-size: 30px;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+canvas{
+    border-style: solid;
+    background-color: #fafff4;
+    align-content: center;
+}
+footer {
+    display: block;
+    background-color: #cb232c;
+}
+
+.cos{
+    text-align: center;
+}
+
+p.backgroundsimages img {
+    margin: 0 10px 0 0;
+}
+
+input[type=radio]
+{
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    padding: 10px;
+}
+
+#id_honeypot {
+    display: none;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#icons{float:left;
+    width: 100px;
+    height: 100px;
+    margin:5px;
+}
+
+p {
+    display: block;
+    text-align: center;
+    color: #000007;
+    font-size: 10px;
+}
+
+.zapisz{
+    height:100px;
+    width:200px;
+    font-size: 50px;
+    background-color: #ff210b;
+}
+
+div.formularz label{
+    font-size: 30px;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
+}

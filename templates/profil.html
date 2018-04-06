@@ -1,0 +1,34 @@
+{% extends "baza.html" %}
+
+{% block title %}Profil{% endblock %}
+
+{% block content %}
+
+    <br>
+
+    Komiksy użytkownika: {{ owner }}
+    {% if comics %}
+        {% for comic in comics %}
+            <br>
+
+            {% if user.id == owner.id  %}
+            {{ forloop.counter }}. <a href="{% url 'detail' comic.id %} ">
+            <img src =  "{{ comic.comics.url }}" class= "img responsive" width = "100" height="100"></a>
+                <a href = "{% url 'delete_comic' comic.id %}">
+                    <i class="glyphicon glyphicon-trash"></i> usuń
+                </a>
+
+                {% elif comic.publiczny %}
+
+                <a href="{% url 'detail' comic.id %} ">
+                <img src =  "{{ comic.comics.url }}" class= "img responsive" width = "100" height="100"></a>
+                {{ comic.created }}
+            {% endif %}
+
+        {% endfor %}
+
+    {% else %}
+        Użytkownik nie ma żadnych komiksów
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "baza.html" %}
+
+{% block title %}Moje konto{% endblock %}
+
+{% block content %}
+
+    Liczba komiksów:
+    {% if user.is_authenticated %}
+        {{ comics.count }}
+        {% if comics %}
+            {% for comic in comics %}
+                <br>
+
+                    {{ forloop.counter }}. <a href="{% url 'detail' comic.id %} ">
+                    <img src =  "{{ comic.comics.url }}" width = "100" height="100"></a>
+                    Data utworzenia: {{ comic.created }} <br>
+                    {% if comic.publiczny %}
+                        Publiczny<br>
+                        {% else %}
+                        Prytwany <br>
+                    {% endif %}
+                    <a href = "{% url 'delete_comic' comic.id %}"><i class="glyphicon glyphicon-trash"></i> usuń </a>
+            {% endfor %}
+        {% else %}
+            Nie masz żadnych komiksów
+        {% endif %}
+    {% endif %}
+{% endblock %}
+

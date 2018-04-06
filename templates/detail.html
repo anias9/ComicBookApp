@@ -1,0 +1,50 @@
+{% extends "baza.html" %}
+{% block title %}Moje konto{% endblock %}
+
+{% block content %}
+    {% load comments %}
+    <a href = "{% url 'detail' comic.id %}">
+        <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
+    </a>
+    {% if user.id == comic.owner.id %}
+        <a href = "{% url 'delete_comic' comic.id %}">
+            <i class="glyphicon glyphicon-trash"></i> usuń<br>
+        </a>
+    {% endif %}
+    Tytuł : {{ comic.title }} <br>
+    Data stworzenia: {{ comic.created }}<br>
+
+    <a href = "{% url 'profil' comic.owner.id %}">{{ comic.owner }} </a><br>
+
+    <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
+    <hr>
+    {% get_comment_list for comic as comment_list %}
+    {% for comment in comment_list %}
+        <div class="">
+           {{ comment.comment }}
+            <br/>
+            <small><a href = "{% url 'profil' comment.user_id %}">{{ comment.user_name}} </a></small>
+            <small>{{ comment.submit_date }}</small>
+            <hr/>
+        </div>
+    {% endfor %}
+
+
+    {% if user.is_authenticated %}
+        {% get_comment_form for comic as form %}
+        <form action="{% comment_form_target %}" method="POST">
+            {% csrf_token %}
+            {{ form.comment }}
+            {{ form.honeypot }}
+            {{ form.content_type }}
+            {{ form.object_pk }}
+            {{ form.timestamp }}
+            {{ form.security_hash }}
+            <input type="hidden" name="next" value="{% url 'detail' comic.id %}" /><br>
+            <input type="submit" value="Dodaj komentarz" id="id_submit" />
+        </form>
+    {% else %}
+        <p>Proszę się <a href="{% url 'logowanie' %}">zalogować,</a> aby dodać komentarz.</p>
+    {% endif %}
+    Wróć na stronę <a href = " {% url 'home'  %}"> GŁÓWNĄ </a>
+{% endblock %}

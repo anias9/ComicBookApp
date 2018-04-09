@@ -190,12 +190,12 @@ a.user{
 }
 
 a.pobierz{
-    color: #39e244;
+    color: #1222e2;
     font-size: 20px;
 }
 
 a.pobierz:hover{
-    color: #28ffb4;
+    color: #000bff;
 }
 
 a.navbar-brand{
@@ -204,4 +204,8 @@ a.navbar-brand{
 
 a.navbar-brand:hover{
     color: #f95aff;
+}
+
+h3{
+    font-size: 40px;
 }

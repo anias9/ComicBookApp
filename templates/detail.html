@@ -20,6 +20,12 @@
             <span class="glyphicon glyphicon-trash"></span> usuń</a>
     {% endif %}
 
+    {% if user.is_authenticated and user.id != comic.owner.id and fav.id > 0 %}
+        <a href="{% url 'unfavorite' comic.id %}"><span class="glyphicon glyphicon-heart"></span> Usuń z ulubionych</a><br>
+    {% elif user.is_authenticated and user.id != comic.owner.id %}
+        <a href="{% url 'favorite' comic.id %}"><span class="glyphicon glyphicon-heart-empty"></span> Dodaj do ulubionych</a><br>
+    {% endif %}
+
     <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
         <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
     Tytuł : {{ comic.title }} <br>

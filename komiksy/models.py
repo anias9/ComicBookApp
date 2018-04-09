@@ -4,13 +4,12 @@ from django.urls import reverse
 
 
 
-
 class Elementy(models.Model):
     background = models.ImageField(upload_to='media', blank=True, null=True)
     character1 = models.ImageField(upload_to='media', blank=True, null=True)
     character2 = models.ImageField(upload_to='media',blank=True, null=True)
     chat1 = models.ImageField(upload_to='media', blank=True, null=True)
-    chat2= models.ImageField(upload_to='media', blank=True, null=True)
+    chat2 = models.ImageField(upload_to='media', blank=True, null=True)
     text1 = models.CharField('Tekst dla pierwszej postaci', max_length = 100, default = " ", blank=True)
     text2 = models.CharField('Tekst dla drugiej postaci', max_length = 100, default = " ", blank=True)
 
@@ -34,7 +33,13 @@ class Comic(models.Model):
         return reverse('home')
 
 
-"""class Profil(models.Model):
+
+class Favorite(models.Model):
+    uzytkownik = models.ForeignKey(User, on_delete=models.CASCADE)
+    comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
+
+    """
+class Profil(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
     value = models.IntegerField(default=0)"""

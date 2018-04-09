@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ComicForm, ElementsForm
 from django.http import Http404
-from .models import Comic, User, Elementy
+from .models import Comic, User, Elementy, Favorite
 from django.forms import modelformset_factory
 from django.views.generic import CreateView,  UpdateView
 from PIL import Image, ImageDraw, ImageFont, ImageFile
@@ -12,10 +12,8 @@ from django.contrib.sites.models import Site
 
 """
 TODO
-
 Wyszukiwanie komiksów, 
 like i dislike,
-ulubione
 
 """
 
@@ -35,12 +33,48 @@ def moje_komentarze(request):
     return render(request, 'moje_komentarze.html')
 
 
+def favorite(request, comic_id):
+    comic = Comic.objects.get(pk = comic_id)
+    f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
+    if f.count() > 0 :
+        return redirect('detail', comic_id)
+    f2 = Favorite.objects.create(uzytkownik=request.user, comic = comic)
+    f2.save()
+    return redirect('detail', comic_id)
+
+
+def unfavorite(request, comic_id):
+    comic = Comic.objects.get(pk = comic_id)
+    f1 = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+    f1.delete()
+    return redirect('detail', comic_id)
+
+
+def ulubione(request):
+    comics = Favorite.objects.filter(uzytkownik=request.user)
+    return render(request, 'ulubione.html', {'comics':comics})
+
+"""
 def detail(request, comic_id):
     try:
         comic = Comic.objects.get(pk = comic_id)
+        fav = Favorite.objects.filter(uzytkownik=request.user, comic = comic)
     except Comic.DoesNotExist:
         raise Http404("Podany komiks nie istnieje")
-    return render(request, 'detail.html', {'comic': comic})
+    return render(request, 'detail.html', {'fav': fav, 'comic': comic})
+"""
+
+def detail(request, comic_id):
+    comic = Comic.objects.get(pk = comic_id)
+    f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
+    if f.count() > 0 :
+        fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+        context = {
+            'fav': fav,
+            'comic': comic,
+        }
+        return render(request, 'detail.html', context)
+    return render(request, 'detail.html', {'comic':comic})
 
 
 def uzytkownicy(request):

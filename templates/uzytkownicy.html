@@ -1,0 +1,23 @@
+{% extends "baza.html" %}
+
+{% block title %}Moje konto{% endblock %}
+{% block content %}
+
+            <div class = "users">
+                {% for user in users %}
+                    <div class = "col-sm-4">
+
+                    {{ forloop.counter }}.
+                        <a href = "{% url 'profil' user.id %}"><span class="glyphicon glyphicon-user"></span> {{ user.username }} </a><br>
+
+                    </div>
+
+                {%  endfor %}
+             </div>
+        </div>
+
+
+<br><br><br><br>
+    <br><br>
+
+{% endblock %}

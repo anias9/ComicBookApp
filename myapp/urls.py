@@ -21,7 +21,7 @@ from django.views.generic.edit import CreateView
 from django.conf import settings
 from django.conf.urls.static import static
 
-from konta import views as konta_views #alias, aby rozróżnić views komiksów od kont
+from konta import views as konta_views
 from komiksy import views
 
 
@@ -31,6 +31,7 @@ urlpatterns = [
     re_path(r'^$', views.home, name='home'),
     re_path(r'^comments/', include('django_comments.urls')),
 
+
     re_path(r'^zmiana_hasla/$', konta_views.zmiana_hasla, name='zmiana_hasla'),
     re_path(r'^moje_dane/$', konta_views.UserUpdateView.as_view(), name='moje_dane'),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -38,15 +39,17 @@ urlpatterns = [
     re_path(r'^logowanie/$', auth_views.LoginView.as_view(template_name='logowanie.html'), name='logowanie'),
     re_path(r'^wyloguj/$', auth_views.LogoutView.as_view(), name='wyloguj'),
     re_path(r'^moje_konto/$', konta_views.moje_konto, name= 'moje_konto'),
-    re_path(r'^meme/$', views.meme, name= 'meme'),
-    re_path(r'^(?P<comic_id>[0-9]+)/$', views.detail, name='detail'), #primary key
+    re_path(r'^moje_komentarze/$', views.moje_komentarze, name= 'moje_komentarze'),
+    re_path(r'^(?P<comic_id>[0-9]+)/$', views.detail, name='detail'),
     re_path(r'^profil/(?P<owner_id>[0-9]+)/$', views.profil, name='profil'),
     re_path(r'^kolekcja/$', views.kolekcja, name= 'kolekcja'),
     re_path(r'^stworzone/(?P<elementy_id>[0-9]+)/$', views.stworzone, name= 'stworzone'),
     re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
     re_path(r'^postacie/$', views.postacie, name= 'postacie'),
 
-    re_path(r'^rysuj_zalogowany/$', views.MemeCreate.as_view(), name= 'rysuj_zalogowany'),
+    re_path(r'^uzytkownicy/$', views.uzytkownicy, name= 'uzytkownicy'),
+
+    re_path(r'^sample/$', views.sample, name= 'sample'),
 
     re_path(r'^(?P<comic_id>[0-9]+)/delete_comic/$', views.delete_comic, name='delete_comic'),
     re_path(r'^(?P<elementy_id>[0-9]+)/delete_elementy/$', views.delete_elementy, name='delete_elementy'),
@@ -54,9 +57,8 @@ urlpatterns = [
     re_path(r'^rysuj/$', views.rysuj, name= 'rysuj'),
     re_path(r'^najnowsze/$', views.najnowsze, name= 'najnowsze'),
     re_path(r'^profil/$', views.profil, name= 'profil'),
-    re_path(r'^stworz_komiks/$', views.stworz_komiks, name= 'stworz_komiks'),
+
     re_path(r'^stworz/(?P<elementy_id>[0-9]+)/$', views.stworz, name= 'stworz'),
-    re_path(r'^meme_zalogowany/$', views.meme_zalogowany, name= 'meme_zalogowany'),
 
 
 

@@ -13,46 +13,185 @@
         <h1> Wybierz <b>tło</b> dla komiksu </h1>
         <div id="image-container">
 
+                <figure><label>
+                    <img src="{% static 'img/bg3.jpg' %}" width="300" height="300" class="img-responsive">
+                    <figcaption><input type="radio" name="background" value="bg3.jpg" checked> Sklep</figcaption>
+                </label></figure>
 
-            <figure>
-                <img src="{% static 'img/bg3.jpg' %}" width="300" height="300" class="img-responsive">
-                <figcaption><input type="radio" name="background" value="bg3.jpg" checked> Sklep</figcaption>
-            </figure>
-
-
-            <figure>
-                <img src="{% static 'img/pg5.jpg' %}" width="300" height="300" class="img-responsive">
-                <figcaption><input type="radio" name="background"
-                                    value="pg5.jpg"> Plaża
-                </figcaption>
-            </figure>
-
-             <figure>
-                 <img src="{% static 'img/bg6.jpg' %}" width="300" height="300" class="img-responsive">
-                    <figcaption>
-                        <input type="radio" name="background" value="bg6.jpg"> Miasto
+                <figure><label>
+                    <img src="{% static 'img/pg5.jpg' %}" width="300" height="300" class="img-responsive">
+                    <figcaption><input type="radio" name="background"
+                                        value="pg5.jpg"> Plaża
                     </figcaption>
-                </figure>
+               </label> </figure>
 
-            <figure>
-                <img src="{% static 'img/zamek.png' %}" class="img-responsive" alt = "sss" width="300" height="300">
-                <figcaption>
-                    <input type="radio" name="background"
-                           value="zamek.png"> Zamek
-                </figcaption>
-            </figure>
+                 <figure><label>
+                     <img src="{% static 'img/bg6.jpg' %}" width="300" height="300" class="img-responsive">
+                        <figcaption>
+                            <input type="radio" name="background" value="bg6.jpg"> Miasto
+                        </figcaption>
+                    </label></figure>
 
-        <figure>
-            <img src="{% static 'img/mountain.jpg' %}"  class="img-responsive" alt = "sss" width="300" height="300">
-            <figcaption>
-                <input type="radio" name="background"
-                       value="mountain.jpg"> Góry
-            </figcaption>
-        </figure>
+                <figure><label>
+                    <img src="{% static 'img/zamek.png' %}" class="img-responsive" alt = "sss" width="300" height="300">
+                    <figcaption>
+                        <input type="radio" name="background"
+                               value="zamek.png"> Zamek
+                    </figcaption>
+                </label></figure>
 
+                <figure><label>
+                    <img src="{% static 'img/mountain.jpg' %}"  class="img-responsive" alt = "sss" width="300" height="300">
+                    <figcaption>
+                        <input type="radio" name="background"
+                               value="mountain.jpg"> Góry
+                    </figcaption>
+                </label></figure>
         </div>
 
-        <h1> Wybierz postać po <b>lewej</b> stronie </h1>
+        <div class = "row">
+            <div class = "col-sm-6 selectContainer" ><h1>Postać po <b>lewej </b>stronie</h1>Rodzaj dymka<br>
+            <select class = "selectpicker show-tick" name = "chat1">
+                <option data-content='<img src="{% static 'img/postacie/rozmowaL.png' %}" class="img-responsive" height="70" width="70">' value = "rozmowaL.png"></option>
+                <option data-content='<img src="{% static 'img/postacie/chmurkaL.png' %}" class="img-responsive" height="70" width="70">' value = "chmurkaL.png"></option>
+            </select>
+        </div>
+
+            <div class = "col-sm-6 selectContainer" ><h1>Postać po <b>prawej </b>stronie</h1>Rodzaj dymka<br>
+            <select class = "selectpicker show-tick" name = "chat2">
+                <option data-content='<img src="{% static 'img/postacie/rozmowaP.png' %}" class="img-responsive" height="70" width="70">' value = "rozmowaP.png"></option>
+                <option data-content='<img src="{% static 'img/postacie/chmurkaP.png' %}" class="img-responsive" height="70" width="70">' value = "chmurkaP.png"></option>
+            </select>
+        </div>
+</div>
+
+    <div class="row">
+            <div class = "col-sm-6 selectContainer" >Bohater<br>
+                    <select class = " selectpicker show-tick" name = "character1">
+                            <option data-content='<img src="{% static 'img/postacie/blueHero.png' %}" class="img-responsive" height="70" width="70">' value="blueHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/blueHeroL.png' %}" class="img-responsive" height="70" width="70">' value="blueHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/blueHeroP.png' %}" class="img-responsive" height="70" width="70">' value="blueHeroP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/redHero.png' %}" class="img-responsive" height="70" width="70">' value="redHeroRpng"></option>
+                            <option data-content='<img src="{% static 'img/postacie/redHeroL.png' %}" class="img-responsive" height="70" width="70">' value="redHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/redHeroR.png' %}" class="img-responsive" height="70" width="70">' value="redHeroR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/greenHero.png' %}" class="img-responsive" height="70" width="70">' value="greenHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/greenHeroL.png' %}" class="img-responsive" height="70" width="70">' value="greenHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/greenHeroP.png' %}" class="img-responsive" height="70" width="70">' value="greenHeroP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/purpleHero.png' %}" class="img-responsive" height="70" width="70">' value="purpleHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/purpleHeroL.png' %}" class="img-responsive" height="70" width="70">' value="purpleHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/purpleHeroP.png' %}" class="img-responsive" height="70" width="70">' value="purpleHeroP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/yellowHero.png' %}" class="img-responsive" height="70" width="70">' value="yellowHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/yellowHeroL.png' %}" class="img-responsive" height="70" width="70">' value="yellowHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/yellowHeroR.png' %}" class="img-responsive" height="70" width="70">' value="yellowHeroR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superhero.png' %}" class="img-responsive" height="70" width="70">' value="superhero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroL.png' %}" class="img-responsive" height="70" width="70">' value="superheroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroR.png' %}" class="img-responsive" height="70" width="70">' value="superheroR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroina.png' %}" class="img-responsive" height="70" width="70">' value="superheroina.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroinaL.png' %}" class="img-responsive" height="70" width="70">' value="superheroinaL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroinaR.png' %}" class="img-responsive" height="70" width="70">' value="superheroinaR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/ufoHappy.png' %}" class="img-responsive" height="70" width="70">' value="ufoHappy.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/ufoL.png' %}" class="img-responsive" height="70" width="70">' value="ufoL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/ufoP.png' %}" class="img-responsive" height="70" width="70">' value="ufoP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/robot.png' %}" class="img-responsive" height="70" width="70">' value="robot.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/robotL.png' %}" class="img-responsive" height="70" width="70">' value="robotL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/robotP.png' %}" class="img-responsive" height="70" width="70">' value="robotP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/boySad.png' %}" class="img-responsive" height="70" width="70">' value="boySad.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/boyLSad.png' %}" class="img-responsive" height="70" width="70">' value="boyLSad.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/boyPSad.png' %}" class="img-responsive" height="70" width="70">' value="boyPSad.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/nerd.png' %}" class="img-responsive" height="70" width="70">' value="nerd.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/nerdL.png' %}" class="img-responsive" height="70" width="70">' value="nerdL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/nerdP.png' %}" class="img-responsive" height="70" width="70">' value="nerdP.png"></option>
+                    </select>
+            </div>
+              <div class = "col-sm-6 selectContainer" >Bohater<br>
+               <select class = " selectpicker show-tick" name = "character2">
+                            <option data-content='<img src="{% static 'img/postacie/blueHero.png' %}" class="img-responsive" height="70" width="70">' value="blueHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/blueHeroL.png' %}" class="img-responsive" height="70" width="70">' value="blueHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/blueHeroP.png' %}" class="img-responsive" height="70" width="70">' value="blueHeroP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/redHero.png' %}" class="img-responsive" height="70" width="70">' value="redHeroRpng"></option>
+                            <option data-content='<img src="{% static 'img/postacie/redHeroL.png' %}" class="img-responsive" height="70" width="70">' value="redHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/redHeroR.png' %}" class="img-responsive" height="70" width="70">' value="redHeroR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/greenHero.png' %}" class="img-responsive" height="70" width="70">' value="greenHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/greenHeroL.png' %}" class="img-responsive" height="70" width="70">' value="greenHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/greenHeroP.png' %}" class="img-responsive" height="70" width="70">' value="greenHeroP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/purpleHero.png' %}" class="img-responsive" height="70" width="70">' value="purpleHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/purpleHeroL.png' %}" class="img-responsive" height="70" width="70">' value="purpleHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/purpleHeroP.png' %}" class="img-responsive" height="70" width="70">' value="purpleHeroP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/yellowHero.png' %}" class="img-responsive" height="70" width="70">' value="yellowHero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/yellowHeroL.png' %}" class="img-responsive" height="70" width="70">' value="yellowHeroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/yellowHeroR.png' %}" class="img-responsive" height="70" width="70">' value="yellowHeroR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superhero.png' %}" class="img-responsive" height="70" width="70">' value="superhero.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroL.png' %}" class="img-responsive" height="70" width="70">' value="superheroL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroR.png' %}" class="img-responsive" height="70" width="70">' value="superheroR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroina.png' %}" class="img-responsive" height="70" width="70">' value="superheroina.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroinaL.png' %}" class="img-responsive" height="70" width="70">' value="superheroinaL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/superheroinaR.png' %}" class="img-responsive" height="70" width="70">' value="superheroinaR.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/ufoHappy.png' %}" class="img-responsive" height="70" width="70">' value="ufoHappy.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/ufoL.png' %}" class="img-responsive" height="70" width="70">' value="ufoL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/ufoP.png' %}" class="img-responsive" height="70" width="70">' value="ufoP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/robot.png' %}" class="img-responsive" height="70" width="70">' value="robot.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/robotL.png' %}" class="img-responsive" height="70" width="70">' value="robotL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/robotP.png' %}" class="img-responsive" height="70" width="70">' value="robotP.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/boySad.png' %}" class="img-responsive" height="70" width="70">' value="boySad.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/boyLSad.png' %}" class="img-responsive" height="70" width="70">' value="boyLSad.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/boyPSad.png' %}" class="img-responsive" height="70" width="70">' value="boyPSad.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/nerd.png' %}" class="img-responsive" height="70" width="70">' value="nerd.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/nerdL.png' %}" class="img-responsive" height="70" width="70">' value="nerdL.png"></option>
+                            <option data-content='<img src="{% static 'img/postacie/nerdP.png' %}" class="img-responsive" height="70" width="70">' value="nerdP.png"></option>
+                    </select>
+        </div>
+</div>
+
+
+
+ <div class="row">
+        <div class = "col-lg-6">
+            <textarea class = "tekst" name="text1"  style="width: 150px; height: 100px" placeholder="Tekst pierwszego bohatera">{{ text1 }}</textarea>
+         </div>
+
+         <div class = "col-sm-6">
+             <textarea class = "tekst" name="text2"  style="width: 150px; height: 100px" placeholder="Tekst drugiego bohatera" >{{ text2 }}</textarea>
+         </div>
+</div>
+
+
+        <input type='submit' value='Zapisz' />
+    </form>
+
+    <a href="{% url 'rysuj' %}" class="btn btn-secondary">Powrót na początek strony</a>
+
+</span>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    PIERWSZA WERSJA WYBORU ELEMENTÓW
+      <h1> Wybierz postać po <b>lewej</b> stronie </h1>
         <div id="image-container">
 
           <figure> <img src="{% static 'img/postacie/blueHeroL.png' %}" class="img-responsive" height="100" width="100">
@@ -325,15 +464,23 @@
             <figcaption><input type="radio" name="chat2"
                                value="rozmowaP.png"></figcaption>
          </figure>
+            <div class = "col-sm-2">
             <input type="text" name="text2"
                    placeholder="Tekst dla drugiej osoby" size = "35">
+                </div>
         </div>
 
 
-        <input type='submit' value='Zapisz' />
-    </form>
 
-    <a href="{% url 'rysuj' %}" class="btn btn-secondary">Powrót na początek strony</a>
 
-</span>
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+!-->

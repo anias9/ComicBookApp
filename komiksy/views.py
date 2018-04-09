@@ -1,16 +1,21 @@
 from django.shortcuts import render, redirect
 from .forms import ComicForm, ElementsForm
 from django.http import Http404
-from .models import Comic, User, Elementy
+from .models import Comic, User, Elementy, Profil
 from django.forms import modelformset_factory
 from django.views.generic import CreateView,  UpdateView
 from PIL import Image, ImageDraw, ImageFont, ImageFile
 import uuid
 
 
+from django.contrib.sites.models import Site
+
 """
 TODO
-Przegląd uzytkowników
+
+Wyszukiwanie komiksów, 
+like i dislike,
+ulubione
 
 """
 
@@ -18,13 +23,16 @@ def home(request):
     last_comics = Comic.objects.filter(publiczny=1)[:1]
     return render(request, 'home.html', {'last_comics':last_comics})
 
-
 def postacie(request):
     return render(request, 'postacie.html')
 
 
-def stworz_komiks(request):
-    return render(request, 'stworz_komiks.html')
+def sample(request):
+    return render(request, 'sample.html')
+
+def moje_komentarze(request):
+    comic = Comic.objects.all()
+    return render(request, 'moje_komentarze.html')
 
 
 def detail(request, comic_id):
@@ -33,6 +41,16 @@ def detail(request, comic_id):
     except Comic.DoesNotExist:
         raise Http404("Podany komiks nie istnieje")
     return render(request, 'detail.html', {'comic': comic})
+
+
+def uzytkownicy(request):
+    users = User.objects.filter(is_superuser=0)
+    comics = Comic.objects.all()
+    context = {
+        'users': users,
+        'comics': comics,
+    }
+    return render(request, 'uzytkownicy.html', context)
 
 
 def profil(request, owner_id):
@@ -65,6 +83,7 @@ def delete_elementy(request, elementy_id):
         return redirect('rysuj')
 
 
+# dodanie elementów komiksów do Elementy
 def rysuj(request):
     form = ElementsForm(request.POST, request.FILES)
 
@@ -88,6 +107,7 @@ def rysuj(request):
         'form': form})
 
 
+#stworzenie komiksów z wybranych Elementów
 def stworzone(request, elementy_id):
     elementy = Elementy.objects.get(pk = elementy_id)
 
@@ -112,7 +132,7 @@ def stworzone(request, elementy_id):
 
     if len(elementy.text1) <= 70:
         for i, c in enumerate(elementy.text1):
-            if i == 20 or i == 40 or i == 60 or i == 70:
+            if i == 18 or i == 36 or i == 54 or i == 70:
                 if c == ' ' or c == ',' or c == '.':
                     t += '\n'
                 else:
@@ -121,11 +141,11 @@ def stworzone(request, elementy_id):
             else:
                 t += c
     else:
-        t = "Niestety wprowadzony\ntekst jest za dlugi\nsprobuj ponownie"
+        t = "Wprowadzony\ntekst jest za dlugi.\nProszę spróbować\nponownie"
 
     if len(elementy.text2) <= 70:
         for i, c in enumerate(elementy.text2):
-            if i == 20 or i == 40 or i == 60 or i == 70:
+            if i == 18 or i == 36 or i == 54 or i == 70:
                 if c == ' ' or c == ',' or c == '.':
                     t2 += '\n'
                 else:
@@ -134,15 +154,12 @@ def stworzone(request, elementy_id):
             else:
                 t2 += c
     else:
-        t2 = "Niestety wprowadzony\ntekst jest za dlugi\nsprobuj ponownie"
-
-
-
+        t2 = "Wprowadzony\ntekst jest za dlugi.\nProszę spróbować\nponownie"
 
     draw = ImageDraw.Draw(img1)
     font = ImageFont.truetype('/home/ichiraku/Downloads/abhaya-libre/AbhayaLibre-Regular.ttf', 25)
     draw.text((60, 100), t, (0, 0, 0), font=font)
-    draw.text((330, 100), t2, (0, 0, 0), font=font)
+    draw.text((320, 100), t2, (0, 0, 0), font=font)
 
     filename = str(uuid.uuid4()) + '.png'
     img1.save('media/' + filename)
@@ -179,7 +196,6 @@ def stworz(request, elementy_id):
     if request.method == 'POST':
 
         form.instance.owner = request.user
-        #form.instance.comics = background elementy
 
         if form.is_valid():
             form.save()
@@ -193,23 +209,6 @@ def stworz(request, elementy_id):
     }
     return render(request, 'stworz.html', context)
 
-def meme_zalogowany(request):
-    form = ComicForm(request.POST, request.FILES)
-    if request.method =='POST':
-        form.instance.owner = request.user
-        form.instance.comics = request.FILES["png"]
-        if form.is_valid():
-            form.save()
-            return redirect('meme_zalogowany.html')
-        else:
-            form = ComicForm()
-    return render(request, 'meme_zalogowany.html', {
-        'form': form
-    })
-
-
-def rysuj_zalogowany(request):
-    return render(request, 'rysuj_zalogowany.html')
 
 
 def najnowsze(request):
@@ -223,26 +222,6 @@ def kolekcja(request):
 
 
 
-class ComicEdit(UpdateView):
-    template_name = 'edycja.html'
-    model = Comic
-    fields = [ 'title', 'publiczny']
-
-    def form_valid(self, form):
-        form.instance.owner = self.request.user
-        return super(MemeCreate, self).form_valid(form)
-
-
-class MemeCreate(CreateView):
-    template_name = 'rysuj_zalogowany.html'
-    model = Comic
-    fields = [ 'title', 'publiczny']
-
-    def form_valid(self, form):
-        form.instance.owner = self.request.user
-        return super(MemeCreate, self).form_valid(form)
-
-
 class ComicCreate(CreateView):
     model = Comic
     fields = ['comics', 'title', 'publiczny']
@@ -251,25 +230,7 @@ class ComicCreate(CreateView):
         form.instance.owner = self.request.user
         return super(ComicCreate, self).form_valid(form)
 
-def meme(request):
-    ComicFormSet = modelformset_factory(Comic, fields= ('comics', 'type', 'title', 'publiczny'))
-    if request.method == 'POST':
-        formset = ComicFormSet(request.POST, request.FILES)
-        if formset.is_valid():
-            formset.save()
-            return redirect('home.html')
-    else:
-        formset = ComicFormSet()
-    return render(request, 'meme.html', {'formset ': formset})
-"""nei dziala
 
-class MemeDelete(DeleteView):
-    model = Comic
-    template_name = 'delete_comic.html'
-    context_object_name = 'comic'
-    success_url = reverse_lazy('home') #doc : We have to use reverse_lazy() here, not just reverse as the urls are not loaded when the file is imported.
-
-"""
 
 
 

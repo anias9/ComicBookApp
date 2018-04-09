@@ -1,12 +1,37 @@
+
 .navbar-brand {
-    font-family: 'Peralta', cursive;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: oblique;
 }
 
+
+
 body {
-    background-color: #60f671;
+    background-color: #826f2e;
     text-align: center;
     color : #000007;
     font-size : 20px;
+}
+
+
+.btn{
+    font-size: 20px;
+    background-color: #166f3a;
+    border: solid;
+    color: #511e52;
+}
+
+.dropdown-menu{
+    background-color: #d8de00;
+    font-size: 20px;
+}
+
+.pos{
+    display: flex;
+    font-size : 60px;
+    size: 40px;
 }
 
 #image-container {
@@ -16,23 +41,48 @@ body {
 
 }
 
-#sub {
+#userMenu{
+    font-size: 40px;
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+.glyphicon.glyphicon-user {
+    font-size: 30px;
+}
+
+.glyphicon-thumbs-up {
+    font-size: 50px;
     size: 50px;
 }
 
-div.fields-title label {
-    font-size: 30px;
-    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+#postacie-container {
+    display: flex;
+    font-size : 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-canvas{
-    border-style: solid;
-    background-color: #fafff4;
-    align-content: center;
+#sub {
+    size: 20px;
 }
+
+div.fields-title {
+    font-size: 10px;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    color: #ff2521;
+    size:  40px;
+}
+
+.form-inline{
+    font-size: 20px;
+}
+
+
 footer {
-    display: block;
-    background-color: #cb232c;
+    height: 60px;
+    padding: 15px 0;
+    background-color: #cc5d00;
+    position: relative;
 }
 
 .cos{
@@ -63,7 +113,8 @@ input[type=radio]
     height: auto;
 }
 
-#icons{float:left;
+#icons{
+    float:left;
     width: 100px;
     height: 100px;
     margin:5px;
@@ -80,7 +131,7 @@ p {
     height:100px;
     width:200px;
     font-size: 50px;
-    background-color: #ff210b;
+    background-color: #0054ff;
 }
 
 div.formularz label{
@@ -97,3 +148,34 @@ hr {
     border-style: inset;
     border-width: 10px;
 }
+
+div.dropdown-menu.open{
+    max-height: 314px !important;
+    overflow: hidden;
+    background-color: #3e8f3e;
+
+}
+ul.dropdown-menu.inner{
+    max-height: 260px !important;
+    overflow-y: auto;
+    background-color: #6ede91;
+}
+
+
+.btn:hover
+{
+    background-image:none;
+    background-color: #00621d;
+}
+
+a:hover{
+    color: chartreuse;
+}
+
+
+.users{
+    display: flex;
+    font-size: 50px;
+}
+
+

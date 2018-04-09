@@ -3,14 +3,26 @@
 
 {% block content %}
     {% load comments %}
-    <a href = "{% url 'detail' comic.id %}">
-        <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
-    </a>
+
+
+        <a href = "{% url 'detail' comic.id %}">
+            <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
+        </a>
+
+
+
+
+    <form id="likebutton" method="POST" action=".">
+    {% csrf_token %}
+    <input type="hidden">
+    </form>
+
     {% if user.id == comic.owner.id %}
         <a href = "{% url 'delete_comic' comic.id %}">
-            <i class="glyphicon glyphicon-trash"></i> usuń<br>
-        </a>
+            <span class="glyphicon glyphicon-trash"></span> usuń</a>
     {% endif %}
+
+
     Tytuł : {{ comic.title }} <br>
     Data stworzenia: {{ comic.created }}<br>
 
@@ -18,6 +30,7 @@
 
     <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
     <hr>
+
     {% get_comment_list for comic as comment_list %}
     {% for comment in comment_list %}
         <div class="">

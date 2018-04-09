@@ -4,14 +4,15 @@
 {% block content %}
     {% load comments %}
 
+
     {% if last_comics %}
         {% for comic in last_comics %}
-
+            <div class="col-sm-6">
             {{ forloop.counter }}.
             <a href="{% url 'detail' comic.id %} ">   <img src =  "{{ comic.comics.url }}" class= "img responsive" height="200" width="200"> </a>
             {{ comic.title }}  {{ comic.created }} <a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
             Liczba komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span>
-           <br>
+           </div>
         {%  endfor %}
     {% else %}
         <h2>Brak komiksów</h2>

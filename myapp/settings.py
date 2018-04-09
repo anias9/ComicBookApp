@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'komikssy_db',
+        'NAME':'projektkomiksy_bd',
         'USER':'root',
         'PASSWORD':'haslo',
         'HOST':'localhost',

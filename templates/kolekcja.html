@@ -7,34 +7,36 @@
         {% load comments %}
     {% if all_comics %}
         {% for comic in all_comics %}
-            {% if forloop.counter == 6 %}
-                </div>
-                <div id="image-container" >
-                    <figure>
-                    <a href="{% url 'detail' comic.id %} ">
-                        <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "200" height="200">
-                        </a>
-                    <figcaption>
-                        {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
-                        Komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span>
-                    </figcaption>
-                    </figure>
+            {% if comic.owner.id != user.id %}
+                {% if forloop.counter == 6 %}
+                    </div>
+                    <div id="image-container" >
+                        <figure>
+                        <a href="{% url 'detail' comic.id %} ">
+                            <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "200" height="200">
+                            </a>
+                        <figcaption>
+                            {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
+                            Komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span>
+                        </figcaption>
+                        </figure>
 
-                {% else %}
-                <figure>
-                    <a href="{% url 'detail' comic.id %} ">
-                        <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "200" height="200">
-                    </a>
-                    <figcaption>
-                        {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
-                        Komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span>
-                    </figcaption>
-                </figure>
+                    {% else %}
+                    <figure>
+                        <a href="{% url 'detail' comic.id %} ">
+                            <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "200" height="200">
+                        </a>
+                        <figcaption>
+                            {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
+                            Komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span>
+                        </figcaption>
+                    </figure>
+                {% endif %}
             {% endif %}
         {%  endfor %}
     </div>
     {% else %}
-        <h2>Nie masz żadnych komisków</h2>
+        <h2>Nie ma żadnych komisków</h2>
     {% endif %}
 
 

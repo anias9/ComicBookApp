@@ -6,8 +6,9 @@
 
     <br>
 
-    Komiksy użytkownika: {{ owner }}
+    Komiksy użytkownika: {{ owner }}<br>
     {% if comics %}
+       Liczba komiksów : {{ comics.count }}
         {% for comic in comics %}
             <br>
 

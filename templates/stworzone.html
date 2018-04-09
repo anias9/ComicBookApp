@@ -9,7 +9,8 @@
 
 
         <img src =  "{{ elementy.background.url }}" class= "img responsive" height="500" width="500">
-
+        <a href="{{ elementy.background.url }}"  download="{{ elementy.background.url }}" style="color: #ac2925">
+            <span class="glyphicon glyphicon-download"></span> Pobierz</a>
         <!--
         <div id="image-container">
         <img src =  "{{ elementy.chat1.url }}" class= "img responsive">
@@ -38,8 +39,7 @@
 
     {% endif %}
 
-        <a href="{{ elementy.background.url }}"  download="{{ elementy.background.url }}" style="color: #ac2925">
-            <span class="glyphicon glyphicon-download"></span> Pobierz</a>
+
     Wróć do <a href="{% url 'delete_elementy' elementy.id %}">wybierania elementów</a><br>
      Wróć na stronę <a href="{% url 'home' %}">główną</a>
     </span>

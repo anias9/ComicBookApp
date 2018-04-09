@@ -172,10 +172,36 @@ a:hover{
     color: chartreuse;
 }
 
+a {
+    color: #0010e2;
+}
 
 .users{
     display: flex;
     font-size: 50px;
 }
 
+a.user:hover {
+    color: #ff2521;
+}
 
+a.user{
+    color: darkred;
+}
+
+a.pobierz{
+    color: #39e244;
+    font-size: 20px;
+}
+
+a.pobierz:hover{
+    color: #28ffb4;
+}
+
+a.navbar-brand{
+    color: #35ff17;
+}
+
+a.navbar-brand:hover{
+    color: #f95aff;
+}

@@ -10,8 +10,6 @@
         </a>
 
 
-
-
     <form id="likebutton" method="POST" action=".">
     {% csrf_token %}
     <input type="hidden">
@@ -22,11 +20,12 @@
             <span class="glyphicon glyphicon-trash"></span> usuń</a>
     {% endif %}
 
-
+    <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
+        <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
     Tytuł : {{ comic.title }} <br>
     Data stworzenia: {{ comic.created }}<br>
 
-    <a href = "{% url 'profil' comic.owner.id %}">{{ comic.owner }} </a><br>
+    Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a><br>
 
     <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
     <hr>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ComicForm, ElementsForm
 from django.http import Http404
-from .models import Comic, User, Elementy, Profil
+from .models import Comic, User, Elementy
 from django.forms import modelformset_factory
 from django.views.generic import CreateView,  UpdateView
 from PIL import Image, ImageDraw, ImageFont, ImageFile

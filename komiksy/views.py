@@ -6,11 +6,6 @@ from django.views.generic import CreateView
 from PIL import Image, ImageDraw, ImageFont
 import uuid
 
-"""
-TODO
-Wyszukiwanie komiksów, 
-"""
-
 
 def favorite(request, comic_id):
     comic = Comic.objects.get(pk = comic_id)
@@ -285,6 +280,7 @@ def ulubione(request):
 
 def sample(request):
     return render(request, 'sample.html')
+
 
 
 class ComicCreate(CreateView):

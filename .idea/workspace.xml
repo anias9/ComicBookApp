@@ -2,15 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e3f23f6-53f6-4da9-9003-f9dbf3411139" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/moje_komentarze.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/najnowsze.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/komiksy/templates/komiksy/comic_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/10d078de-a909-4ce8-9ff6-9239c66d9c6f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/175bdf56-fc45-4553-9b58-14c1f9a0e4b6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/1fbb2741-9d4b-4885-a951-525707be8d3d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/2349ce6b-ab4c-4400-8cf4-17d7ed8d2757.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/2aeb1c6b-5684-4687-b413-fe891e3569dc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/2d58780d-20f5-4f8d-be89-345ccf203f85.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/2f3b45fe-797a-47ed-aa33-2ab3993d66a4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/34689a6d-f96b-42a1-bada-1e65bc540097.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/368cfe8f-2c7d-4757-96cc-abb3f3a11402.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/4c64df0a-4f6f-4287-a295-f2e4e099af1a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/5405a64a-c073-4765-bcf1-381d7f7d1508.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/550012eb-5147-4350-bde0-df447e7debdb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/55a625a8-152b-4fa2-836e-f7d87b7649f2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/5b0fe8df-2e85-4ee2-8180-dcf30357e3fe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/651eca98-fcb4-472c-a9f4-5b2e50d57020.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/67478d84-4eb0-4c9b-9e12-0ed3591146b5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/6789ceba-afb9-450a-8520-2a68508f1ffa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/6cc206f4-103e-4377-a87e-5ed2bda6e3fb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/7419dc2f-213c-4689-bd0e-e46a40ece97e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/74e014b7-bd1b-4430-9145-48fb08e12ac9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/782c4d75-ecac-4d82-9d10-cb360bd947e4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/7c5139c8-3a85-4a9b-b35a-9ba820f326d0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/8117b73b-bd72-4450-a1fa-d4d450a7a7bc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/86c3bb13-edb5-42e1-ac37-b9e87298e1bc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/8be8c596-123b-4acf-a655-0073e081ed3b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/90d9cf0c-32e2-482f-a780-097c48ce9837.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/9ae5eb00-d8ab-40cb-bf57-cebddf9bef70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/9f065c8f-a672-4f00-b140-8bf855cecd38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/a90bf3f0-c7a1-495f-99fd-59634ed22649.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/af0afca8-01c5-43a7-8eee-bd44e8434978.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/b430e161-96ad-4057-967f-304e107bfa32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/c028c8a4-afdb-44b9-9298-5e4634bb3a6d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/c38778fc-ec98-464a-981e-93c737f921d3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/c65d985d-6d9a-4415-8fa2-3780a26c0f10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/ca201da7-347e-4178-b372-1a6cf1bb6bd8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/cac1aeef-955b-4ea3-9946-805410b415b7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/cf0a178c-b2a3-47bd-a245-433c14655c38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/d15c18fb-e719-4644-bb35-2be2347cb7c8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/d269b3f4-ccbf-4ca5-9940-019dd22382f6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/d4b4a6d5-2df7-4026-b2d3-347a4ce66c92.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/dba93052-9a17-4d06-876a-2ab7cb5e7a31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/e041d741-43e9-4cd2-b70a-d9bbd7bd5821.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/e1f40708-cb4b-4df8-bbc7-5dc5d0de1ec3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/e3fb886c-644c-43cf-9273-75c52ce5ef12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/f04fdcc8-9ea5-45af-97ef-d22b240502ed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/f6fae9cd-00c4-4da1-b797-23c3078b79d8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/f78a844c-e61c-4f04-8d8e-335be752a750.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/fbd79f10-0c7d-4218-965c-e52608922aee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/fd1f98c4-99aa-4183-acf5-f7255eeaf0a6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/fd4a4ba1-9a02-4d93-9eed-7d134cd9f1cf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/ff158447-b4cc-4c75-91f3-8eb0f3d4b856.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komiksy/models.py" afterPath="$PROJECT_DIR$/komiksy/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komiksy/views.py" afterPath="$PROJECT_DIR$/komiksy/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/urls.py" afterPath="$PROJECT_DIR$/myapp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/baza.html" afterPath="$PROJECT_DIR$/templates/baza.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/detail.html" afterPath="$PROJECT_DIR$/templates/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="521">
+              <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,18 +127,42 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/komiksy/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3435">
-              <caret line="268" column="0" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rysuj.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/rysuj.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="79" column="173" lean-forward="false" selection-start-line="79" selection-start-column="173" selection-end-line="79" selection-end-column="173" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/konta/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="885">
+              <caret line="59" column="15" lean-forward="false" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -100,8 +171,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/komiksy/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -110,8 +181,8 @@
       <file leaf-file-name="baza.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/baza.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1016">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="101" column="13" lean-forward="true" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -122,16 +193,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="28" column="49" lean-forward="false" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="defaults-pl_PL.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/i18n/defaults-pl_PL.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -211,7 +272,6 @@
         <option value="$PROJECT_DIR$/templates/najlepsze.html" />
         <option value="$PROJECT_DIR$/static/css/app.css" />
         <option value="$PROJECT_DIR$/templates/moje_konto.html" />
-        <option value="$PROJECT_DIR$/konta/views.py" />
         <option value="$PROJECT_DIR$/templates/polubione.html" />
         <option value="$PROJECT_DIR$/templates/moje_dane.html" />
         <option value="$PROJECT_DIR$/static/js/info.js" />
@@ -221,13 +281,14 @@
         <option value="$PROJECT_DIR$/static/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/static/js/jquery.min.js" />
         <option value="$PROJECT_DIR$/static/js/jquery-3.2.1.min.js" />
-        <option value="$PROJECT_DIR$/komiksy/models.py" />
         <option value="$PROJECT_DIR$/templates/detail.html" />
         <option value="$PROJECT_DIR$/templates/moje_komentarze.html" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/komiksy/models.py" />
         <option value="$PROJECT_DIR$/myapp/urls.py" />
         <option value="$PROJECT_DIR$/templates/baza.html" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/komiksy/views.py" />
+        <option value="$PROJECT_DIR$/konta/views.py" />
       </list>
     </option>
   </component>
@@ -278,6 +339,11 @@
             <path>
               <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="konta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -290,11 +356,6 @@
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -480,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523388606164</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added">
+      <created>1523400368902</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1523400368902</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -499,6 +567,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1280" height="1024" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.4969697" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
@@ -557,26 +626,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/konta/views.py</url>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/rejestracja.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/ed601969/23229d33-9332-4929-90f3-e526e02cfd0e/pracaLic.komiksy_elementy">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vote/views.py" />
     <entry file="file://$PROJECT_DIR$/vote/utils.py" />
     <entry file="file://$PROJECT_DIR$/vote/tests.py" />
@@ -588,14 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/rysuj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="79" column="173" lean-forward="false" selection-start-line="79" selection-start-column="173" selection-end-line="79" selection-end-column="173" />
           <folding />
         </state>
       </provider>
@@ -746,14 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/konta/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="59" column="15" lean-forward="false" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -791,7 +835,7 @@
         <state relative-caret-position="819">
           <caret line="1872" column="0" lean-forward="false" selection-start-line="1872" selection-start-column="0" selection-end-line="1872" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <marker date="1523387447145" expanded="true" signature="20200:20207" ph="×" />
             <marker date="1523387447145" expanded="true" signature="22118:22124" ph=" " />
           </folding>
@@ -821,7 +865,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,7 +875,7 @@
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,7 +885,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,10 +921,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/baza.html">
+    <entry file="file://$PROJECT_DIR$/static/js/i18n/defaults-pl_PL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1016">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -893,7 +937,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/i18n/defaults-pl_PL.js">
+    <entry file="file://$PROJECT_DIR$/komiksy/templates/komiksy/comic_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -901,34 +945,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/rysuj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="79" column="173" lean-forward="false" selection-start-line="79" selection-start-column="173" selection-end-line="79" selection-end-column="173" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/baza.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="101" column="13" lean-forward="true" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/komiksy/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/komiksy/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3435">
-          <caret line="268" column="0" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/b430e161-96ad-4057-967f-304e107bfa32.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/konta/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="15" lean-forward="false" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
           <folding />
         </state>
       </provider>

@@ -24,9 +24,9 @@ class Comic(models.Model):
     likes = models.IntegerField(default=0)
 
     class Meta:
-        verbose_name = u'komiks' #nazwa obiektu w języku polski
+        verbose_name = u'komiks'
         verbose_name_plural = u'komiksy'
-        ordering = ['-created'] #od najnowszych
+        ordering = ['-created']
 
     def get_absolute_url(self):
         return reverse('home')

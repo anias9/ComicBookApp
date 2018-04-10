@@ -8,26 +8,26 @@ import uuid
 
 
 def favorite(request, comic_id):
-    comic = Comic.objects.get(pk = comic_id)
-    f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
+    comic = Comic.objects.get(pk=comic_id)
+    f = Favorite.objects.filter(uzytkownik=request.user, comic=comic)
     if f.count() > 0:
         return redirect('detail', comic_id)
-    f2 = Favorite.objects.create(uzytkownik=request.user, comic = comic)
+    f2 = Favorite.objects.create(uzytkownik=request.user, comic=comic)
     f2.save()
     return redirect('detail', comic_id)
 
 
 def unfavorite(request, comic_id):
-    comic = Comic.objects.get(pk = comic_id)
+    comic = Comic.objects.get(pk=comic_id)
     f1 = Favorite.objects.get(uzytkownik=request.user, comic= comic)
     f1.delete()
     return redirect('detail', comic_id)
 
 
 def like(request, comic_id):
-    comic = Comic.objects.get(pk = comic_id)
+    comic = Comic.objects.get(pk=comic_id)
     l = Votes.objects.filter(uzytkownik=request.user, comic= comic)
-    if l.count() > 0 :
+    if l.count() > 0:
         return redirect('detail', comic_id)
     l2 = Votes.objects.create(uzytkownik=request.user, comic= comic)
     l2.save()
@@ -37,8 +37,8 @@ def like(request, comic_id):
 
 
 def unlike(request, comic_id):
-    comic = Comic.objects.get(pk = comic_id)
-    f1 = Votes.objects.get(uzytkownik=request.user, comic= comic)
+    comic = Comic.objects.get(pk=comic_id)
+    f1 = Votes.objects.get(uzytkownik=request.user, comic=comic)
     f1.delete()
     comic.likes = comic.likes - 1
     comic.save()

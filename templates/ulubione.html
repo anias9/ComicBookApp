@@ -5,7 +5,7 @@
 {% block content %}
     {% load comments %}
 
-<h3>Ulubione</h3>
+    <h3> <span class="glyphicon glyphicon-heart" style="color: #ac2925; font-size: 50px" ></span> <b>Ulubione</b></h3>
     {% if comics %}
         {% for comic in comics %}
             <div class="col-sm-6">
@@ -17,7 +17,7 @@
         {%  endfor %}
     {% else %}
         <br><h3>Nie masz żadnych ulubionych komiksów!<span class="glyphicon glyphicon-heart-empty"></span></h3><br>
-        <h3>Zmień to, przeglądają <a href="{% url 'kolekcja' %} "> komiksy
+        <h3>Zmień to, przeglądając <a href="{% url 'kolekcja' %} "> komiksy
             <span class="glyphicon glyphicon-picture"></span></a> innych użytkowników</h3><br><br/><br><br><br><br><br><br><br><br>
 
     {% endif %}

@@ -31,7 +31,6 @@ urlpatterns = [
     re_path(r'^$', views.home, name='home'),
     re_path(r'^comments/', include('django_comments.urls')),
 
-
     re_path(r'^zmiana_hasla/$', konta_views.zmiana_hasla, name='zmiana_hasla'),
     re_path(r'^moje_dane/$', konta_views.UserUpdateView.as_view(), name='moje_dane'),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -40,30 +39,31 @@ urlpatterns = [
     re_path(r'^wyloguj/$', auth_views.LogoutView.as_view(), name='wyloguj'),
     re_path(r'^moje_konto/$', konta_views.moje_konto, name= 'moje_konto'),
     re_path(r'^moje_komentarze/$', views.moje_komentarze, name= 'moje_komentarze'),
+
     re_path(r'^(?P<comic_id>[0-9]+)/$', views.detail, name='detail'),
     re_path(r'^(?P<comic_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
     re_path(r'^(?P<comic_id>[0-9]+)/unfavorite/$', views.unfavorite, name='unfavorite'),
-    re_path(r'^profil/(?P<owner_id>[0-9]+)/$', views.profil, name='profil'),
-    re_path(r'^kolekcja/$', views.kolekcja, name= 'kolekcja'),
-    re_path(r'^stworzone/(?P<elementy_id>[0-9]+)/$', views.stworzone, name= 'stworzone'),
-    re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
-    re_path(r'^postacie/$', views.postacie, name= 'postacie'),
-    re_path(r'^ulubione/$', views.ulubione, name= 'ulubione'),
-
-    re_path(r'^uzytkownicy/$', views.uzytkownicy, name= 'uzytkownicy'),
-
-    re_path(r'^sample/$', views.sample, name= 'sample'),
+    re_path(r'^(?P<comic_id>[0-9]+)/like/$', views.like, name='like'),
+    re_path(r'^(?P<comic_id>[0-9]+)/unlike/$', views.unlike, name='unlike'),
 
     re_path(r'^(?P<comic_id>[0-9]+)/delete_comic/$', views.delete_comic, name='delete_comic'),
     re_path(r'^(?P<elementy_id>[0-9]+)/delete_elementy/$', views.delete_elementy, name='delete_elementy'),
+    re_path(r'^stworz/(?P<elementy_id>[0-9]+)/$', views.stworz, name= 'stworz'),
 
+    re_path(r'^profil/(?P<owner_id>[0-9]+)/$', views.profil, name='profil'),
+    re_path(r'^stworzone/(?P<elementy_id>[0-9]+)/$', views.stworzone, name= 'stworzone'),
+
+    re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
+
+    re_path(r'^postacie/$', views.postacie, name= 'postacie'),
+    re_path(r'^ulubione/$', views.ulubione, name= 'ulubione'),
+    re_path(r'^kolekcja/$', views.kolekcja, name= 'kolekcja'),
+    re_path(r'^najlepsze/$', views.najlepsze, name= 'najlepsze'),
+    re_path(r'^uzytkownicy/$', views.uzytkownicy, name= 'uzytkownicy'),
+    re_path(r'^sample/$', views.sample, name= 'sample'),
     re_path(r'^rysuj/$', views.rysuj, name= 'rysuj'),
     re_path(r'^najnowsze/$', views.najnowsze, name= 'najnowsze'),
     re_path(r'^profil/$', views.profil, name= 'profil'),
-
-    re_path(r'^stworz/(?P<elementy_id>[0-9]+)/$', views.stworz, name= 'stworz'),
-
-
 
                   #re_path(r'^(?P<comic_id>[0-9]+)/delete_comic/$', views.MemeDelete.as_view(), name='delete_comic'),
 

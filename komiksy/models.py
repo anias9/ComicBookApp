@@ -22,7 +22,6 @@ class Comic(models.Model):
     created = models.DateTimeField('Data utworzenia', auto_now_add= True)
     publiczny = models.BooleanField(default=0)
     likes = models.IntegerField(default=0)
-    dislikes = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = u'komiks' #nazwa obiektu w języku polski
@@ -33,16 +32,13 @@ class Comic(models.Model):
         return reverse('home')
 
 
-
 class Favorite(models.Model):
     uzytkownik = models.ForeignKey(User, on_delete=models.CASCADE)
     comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
 
-    """
-class Profil(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
-    value = models.IntegerField(default=0)"""
 
+class Votes(models.Model):
+    uzytkownik = models.ForeignKey(User, on_delete=models.CASCADE)
+    comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
 
 

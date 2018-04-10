@@ -15,20 +15,27 @@
             <a href = "{% url 'delete_comic' comic.id %}">
                 <span class="glyphicon glyphicon-trash"></span> usuń</a>
         {% endif %}
-        {% if user.id != comic.owner.id and fav.id > 0 %} %}
-            <a href="{% url 'unfavorite' comic.id %}"><span class="glyphicon glyphicon-heart"></span> Usuń z ulubionych</a><br>
+        {% if user.id != comic.owner.id and fav.id > 0 %}
+            <span class="glyphicon glyphicon-heart" style="color: #ac2925; font-size: 50px" ></span> <p>Ulubiony</p><a href="{% url 'unfavorite' comic.id %}">Usuń z ulubionych</a><br>
         {% elif user.id != comic.owner.id %}
-            <a href="{% url 'favorite' comic.id %}"><span class="glyphicon glyphicon-heart-empty"></span> Dodaj do ulubionych</a><br>
+            <a href="{% url 'favorite' comic.id %}"><span class="glyphicon glyphicon-heart-empty" style="color: #ac2925; font-size: 50px"></span> Dodaj do ulubionych</a><br>
         {% endif %}
     {% endif %}
 
-
+    {% if user.is_authenticated %}
+        {% if user.id != comic.owner.id and like.id > 0 %}
+            <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span><a href="{% url 'unlike' comic.id %}">Jednak nie fajny</a><br>
+        {% elif user.id != comic.owner.id %}
+            <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Fajny</a><br>
+        {% endif %}
+    {% endif %}
 
     <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
         <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
+
     Tytuł : {{ comic.title }} <br>
     Data stworzenia: {{ comic.created }}<br>
-
+    Lajki : {{ comic.likes }}<br>
     Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a><br>
 
     <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
@@ -62,5 +69,7 @@
     {% else %}
         <p>Proszę się <a href="{% url 'logowanie' %}">zalogować,</a> aby dodać komentarz.</p>
     {% endif %}
+
+
     Wróć na stronę <a href = " {% url 'home'  %}"> GŁÓWNĄ </a>
 {% endblock %}

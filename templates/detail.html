@@ -34,7 +34,7 @@
         <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
 
     Tytuł : {{ comic.title }} <br>
-    Data stworzenia: {{ comic.created }}<br>
+    Data utworzenia: {{ comic.created }}<br>
     Lajki : {{ comic.likes }}<br>
     Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a><br>
 

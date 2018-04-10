@@ -67,8 +67,6 @@ urlpatterns = [
     re_path(r'^najnowsze/$', views.najnowsze, name= 'najnowsze'),
     re_path(r'^profil/$', views.profil, name= 'profil'),
 
-                  #re_path(r'^(?P<comic_id>[0-9]+)/delete_comic/$', views.MemeDelete.as_view(), name='delete_comic'),
-
     re_path(r'^admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

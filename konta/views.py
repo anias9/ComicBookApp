@@ -31,7 +31,7 @@ def moje_konto(request):
 
 
 def delete_konto(request):
-    user = User.objects.get(pk= request.user.id)
+    user = User.objects.get(pk=request.user.id)
     user.delete()
     return redirect('home')
 
@@ -57,6 +57,6 @@ def zmiana_hasla(request):
         else:
             form = PasswordChangeForm(request.user)
         return render(request, 'zmiana_hasla.html', {
-        'form': form
+        'form' : form
     })
 

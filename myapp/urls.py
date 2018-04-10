@@ -61,7 +61,6 @@ urlpatterns = [
     re_path(r'^kolekcja/$', views.kolekcja, name= 'kolekcja'),
     re_path(r'^najlepsze/$', views.najlepsze, name= 'najlepsze'),
     re_path(r'^uzytkownicy/$', views.uzytkownicy, name= 'uzytkownicy'),
-    re_path(r'^sample/$', views.sample, name= 'sample'),
     re_path(r'^rysuj/$', views.rysuj, name= 'rysuj'),
     re_path(r'^profil/$', views.profil, name= 'profil'),
 

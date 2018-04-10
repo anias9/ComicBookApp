@@ -278,9 +278,6 @@ def ulubione(request):
     return render(request, 'ulubione.html', {'comics':comics})
 
 
-def sample(request):
-    return render(request, 'sample.html')
-
 
 class ComicCreate(CreateView):
     model = Comic

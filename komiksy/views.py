@@ -12,38 +12,6 @@ Wyszukiwanie komiksów,
 """
 
 
-def home(request):
-    last_comics = Comic.objects.filter(publiczny=1)[:1]
-    return render(request, 'home.html', {'last_comics':last_comics})
-
-
-def postacie(request):
-    return render(request, 'postacie.html')
-
-
-def najlepsze(request):
-    comics = Comic.objects.filter(publiczny=1, likes__gt=0).order_by('-likes')[:10]
-    return render(request, 'najlepsze.html', {'comics':comics})
-
-
-def polubione(request):
-    comics = Votes.objects.filter(uzytkownik=request.user)
-    return render(request, 'polubione.html', {'comics':comics})
-
-
-def ulubione(request):
-    comics = Favorite.objects.filter(uzytkownik=request.user)
-    return render(request, 'ulubione.html', {'comics':comics})
-
-def sample(request):
-    return render(request, 'sample.html')
-
-
-def moje_komentarze(request):
-    comic = Comic.objects.all()
-    return render(request, 'moje_komentarze.html')
-
-
 def favorite(request, comic_id):
     comic = Comic.objects.get(pk = comic_id)
     f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
@@ -285,14 +253,38 @@ def stworz(request, elementy_id):
     return render(request, 'stworz.html', context)
 
 
-def najnowsze(request):
-    last_comics = Comic.objects.filter(publiczny=1)[:5]
-    return render(request, 'najnowsze.html', {'last_comics':last_comics},)
-
-
 def kolekcja(request):
     all_comics = Comic.objects.filter(publiczny=1)
     return render(request, 'kolekcja.html',  {'all_comics' : all_comics,})
+
+
+def home(request):
+    last_comics = Comic.objects.filter(publiczny=1)[:1]
+    return render(request, 'home.html', {'last_comics':last_comics})
+
+
+def postacie(request):
+    return render(request, 'postacie.html')
+
+
+#10 najlepszych komiksów, sortowne od największej ilości lajkow
+def najlepsze(request):
+    comics = Comic.objects.filter(publiczny=1, likes__gt=0).order_by('-likes')[:10]
+    return render(request, 'najlepsze.html', {'comics':comics})
+
+
+def polubione(request):
+    comics = Votes.objects.filter(uzytkownik=request.user)
+    return render(request, 'polubione.html', {'comics':comics})
+
+
+def ulubione(request):
+    comics = Favorite.objects.filter(uzytkownik=request.user)
+    return render(request, 'ulubione.html', {'comics':comics})
+
+
+def sample(request):
+    return render(request, 'sample.html')
 
 
 class ComicCreate(CreateView):

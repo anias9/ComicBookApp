@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-4">
                     {% if last_comics %}
-                        {% for comic in last_comics %}
+                        {% for comic in last_comics %}Ostatnio dodany komiks
                             <a href="{% url 'detail' comic.id %} ">
                                 <figure>
                                     <img src =  "{{ comic.comics.url }}" class= "img-responsive" ></figure>
@@ -18,8 +18,6 @@
                                         Data dodania: {{ comic.created }} <br>
                                         Autor: <a href="{% url 'profil' comic.owner.id %} " class = "user">{{ comic.owner }}</a>
                                     </figcaption>
-                            <a href="{% url 'najnowsze' %}" >Zobacz ostatnio dodane komiksy</a><br>
-
                             <br>
                         {%  endfor %}
 
@@ -28,7 +26,7 @@
                     {% endif %}
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4">Bohaterowie
                     <a href="{% url 'postacie' %} ">
                         <figure>
                             <img src =  "{% static 'img/postacie/miks.png' %}" class= "img-responsive" height="600" width="600" >

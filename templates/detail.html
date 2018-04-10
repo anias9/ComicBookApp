@@ -5,11 +5,13 @@
     {% load comments %}
 
 
+
         <a href = "{% url 'detail' comic.id %}">
             <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
         </a>
 
 
+    {# Usuwanie dla twórców, dodawanie do ulubionych i usuwanie z ulubionych dla innych użytkowników #}
     {% if user.is_authenticated %}
         {% if user.id == comic.owner.id %}
             <a href = "{% url 'delete_comic' comic.id %}">
@@ -22,6 +24,9 @@
         {% endif %}
     {% endif %}
 
+
+
+    {# Lajkowanie i odlajkowanie komiksu dla innych uzytkowników #}
     {% if user.is_authenticated %}
         {% if user.id != comic.owner.id and like.id > 0 %}
             <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span>Jednak nie<a href="{% url 'unlike' comic.id %}"> lajkuje</a><br>
@@ -30,17 +35,24 @@
         {% endif %}
     {% endif %}
 
+
+    {# Pobieranie komiksu #}
     <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
         <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
 
+
+    {# Dane komiksu #}
     Tytuł : {{ comic.title }} <br>
     Data utworzenia: {{ comic.created }}<br>
     Lajki : {{ comic.likes }}<br>
     Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a><br>
 
+
+    {# Liczba komentarzy #}
     <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
     <hr>
 
+    {# Wyswietlanie komentarzy #}
     {% get_comment_list for comic as comment_list %}
     {% for comment in comment_list %}
         <div class="">
@@ -49,10 +61,13 @@
             <small><a href = "{% url 'profil' comment.user_id %}">{{ comment.user_name}} </a></small>
             <small>{{ comment.submit_date }}</small>
             <hr/>
+
         </div>
     {% endfor %}
 
 
+
+    {# Dodadnie komentarza #}
     {% if user.is_authenticated %}
         {% get_comment_form for comic as form %}
         <form action="{% comment_form_target %}" method="POST">
@@ -65,6 +80,7 @@
             {{ form.security_hash }}
             <input type="hidden" name="next" value="{% url 'detail' comic.id %}" /><br>
             <input type="submit" value="Dodaj komentarz" id="id_submit" />
+            <input type="submit" name="preview" value="Preview">
         </form>
     {% else %}
         <p>Proszę się <a href="{% url 'logowanie' %}">zalogować,</a> aby dodać komentarz.</p>
@@ -72,4 +88,5 @@
 
 
     Wróć na stronę <a href = " {% url 'home'  %}"> GŁÓWNĄ </a>
+
 {% endblock %}

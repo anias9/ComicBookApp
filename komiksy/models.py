@@ -42,3 +42,8 @@ class Votes(models.Model):
     comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
 
 
+class Subscription(models.Model):
+    subscribed = models.ForeignKey(User, on_delete=models.CASCADE,  related_name='subscribed')
+    subscriber = models.ForeignKey(User, on_delete=models.CASCADE,  related_name='subscriber')
+
+

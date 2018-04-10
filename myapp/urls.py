@@ -39,7 +39,6 @@ urlpatterns = [
     re_path(r'^wyloguj/$', auth_views.LogoutView.as_view(), name='wyloguj'),
     re_path(r'^moje_konto/$', konta_views.moje_konto, name= 'moje_konto'),
     re_path(r'^moje_dane/delete_konto/$', konta_views.delete_konto, name= 'delete_konto'),
-    re_path(r'^moje_komentarze/$', views.moje_komentarze, name= 'moje_komentarze'),
 
     re_path(r'^(?P<comic_id>[0-9]+)/$', views.detail, name='detail'),
     re_path(r'^(?P<comic_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
@@ -64,7 +63,6 @@ urlpatterns = [
     re_path(r'^uzytkownicy/$', views.uzytkownicy, name= 'uzytkownicy'),
     re_path(r'^sample/$', views.sample, name= 'sample'),
     re_path(r'^rysuj/$', views.rysuj, name= 'rysuj'),
-    re_path(r'^najnowsze/$', views.najnowsze, name= 'najnowsze'),
     re_path(r'^profil/$', views.profil, name= 'profil'),
 
     re_path(r'^admin/', admin.site.urls),

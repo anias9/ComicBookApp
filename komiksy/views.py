@@ -258,11 +258,11 @@ def home(request):
     return render(request, 'home.html', {'last_comics':last_comics})
 
 
-def postacie(request):
-    return render(request, 'postacie.html')
+# def postacie(request):
+    # return render(request, 'postacie.html')
 
 
-#10 najlepszych komiksów, sortowne od największej ilości lajkow
+# 10 najlepszych komiksów, sortowne od największej ilości lajkow
 def najlepsze(request):
     comics = Comic.objects.filter(publiczny=1, likes__gt=0).order_by('-likes')[:10]
     return render(request, 'najlepsze.html', {'comics':comics})

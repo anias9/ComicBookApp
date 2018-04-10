@@ -12,8 +12,10 @@ from django.contrib.sites.models import Site
 
 """
 TODO
+
 Wyszukiwanie komiksów, 
 like i dislike,
+ulubione
 
 """
 
@@ -51,9 +53,8 @@ def unfavorite(request, comic_id):
 
 
 def ulubione(request):
-    comics = Favorite.objects.filter(uzytkownik=request.user)
+    comics = Favorite.objects.filter(u)
     return render(request, 'ulubione.html', {'comics':comics})
-
 """
 def detail(request, comic_id):
     try:
@@ -66,14 +67,15 @@ def detail(request, comic_id):
 
 def detail(request, comic_id):
     comic = Comic.objects.get(pk = comic_id)
-    f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
-    if f.count() > 0 :
-        fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
-        context = {
-            'fav': fav,
-            'comic': comic,
-        }
-        return render(request, 'detail.html', context)
+    if request.user.is_authenticated:
+        f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
+        if f.count() > 0 :
+            fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+            context = {
+                'fav': fav,
+                'comic': comic,
+            }
+            return render(request, 'detail.html', context)
     return render(request, 'detail.html', {'comic':comic})
 
 

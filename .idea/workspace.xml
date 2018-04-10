@@ -2,78 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e3f23f6-53f6-4da9-9003-f9dbf3411139" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ar_AR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ar_AR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-bg_BG.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-bg_BG.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-cro_CRO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-cro_CRO.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-cs_CZ.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-cs_CZ.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-da_DK.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-da_DK.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-de_DE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-de_DE.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-en_US.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-en_US.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-es_CL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-es_CL.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-es_ES.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-es_ES.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-et_EE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-et_EE.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-eu.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-fa_IR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-fa_IR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-fi_FI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-fi_FI.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-fr_FR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-fr_FR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-hu_HU.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-hu_HU.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-id_ID.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-id_ID.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-it_IT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-it_IT.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ja_JP.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ja_JP.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-kh_KM.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-kh_KM.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ko_KR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ko_KR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-lt_LT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-lt_LT.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-nb_NO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-nb_NO.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-nl_NL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-nl_NL.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-pl_PL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-pl_PL.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-pt_BR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-pt_BR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-pt_PT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-pt_PT.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ro_RO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ro_RO.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ru_RU.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ru_RU.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-sk_SK.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-sk_SK.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-sl_SI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-sl_SI.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-sv_SE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-sv_SE.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-tr_TR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-tr_TR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ua_UA.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-ua_UA.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-vi_VN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-vi_VN.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-zh_CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-zh_CN.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-zh_TW.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/i18n/defaults-zh_TW.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/bootstrap-select.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="819">
-              <caret line="1872" column="0" lean-forward="true" selection-start-line="1872" selection-start-column="0" selection-end-line="1872" selection-end-column="0" />
+              <caret line="1872" column="0" lean-forward="false" selection-start-line="1872" selection-start-column="0" selection-end-line="1872" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1523387447145" expanded="true" signature="20200:20207" ph="×" />
@@ -169,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/bootstrap-select.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -181,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/jquery.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -193,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/jquery-3.2.1.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -205,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/jquery-ui.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
-              <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+              <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
               <folding>
                 <marker date="1520720764000" expanded="true" signature="22659:22730" ph="..." />
                 <marker date="1520720764000" expanded="true" signature="22753:22777" ph="..." />
@@ -554,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523388085502</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added">
+      <created>1523388109760</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1523388109760</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -573,7 +508,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1280" height="1024" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.4969697" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
@@ -940,7 +874,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/bootstrap-select.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="819">
-          <caret line="1872" column="0" lean-forward="true" selection-start-line="1872" selection-start-column="0" selection-end-line="1872" selection-end-column="0" />
+          <caret line="1872" column="0" lean-forward="false" selection-start-line="1872" selection-start-column="0" selection-end-line="1872" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1523387447145" expanded="true" signature="20200:20207" ph="×" />
@@ -962,7 +896,7 @@
         <state relative-caret-position="819">
           <caret line="2377" column="0" lean-forward="false" selection-start-line="2377" selection-start-column="0" selection-end-line="2377" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,7 +904,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/bootstrap-select.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -980,7 +914,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -990,7 +924,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/jquery-3.2.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1000,7 +934,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+          <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
           <folding>
             <marker date="1520720764000" expanded="true" signature="22659:22730" ph="..." />
             <marker date="1520720764000" expanded="true" signature="22753:22777" ph="..." />

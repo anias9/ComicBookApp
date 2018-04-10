@@ -143,7 +143,7 @@ def rysuj(request):
         'form': form})
 
 
-#stworzenie komiksów z wybranych Elementów
+# stworzenie komiksów z wybranych Elementów
 def stworzone(request, elementy_id):
     try:
         elementy = Elementy.objects.get(pk = elementy_id)
@@ -280,7 +280,6 @@ def ulubione(request):
 
 def sample(request):
     return render(request, 'sample.html')
-
 
 
 class ComicCreate(CreateView):

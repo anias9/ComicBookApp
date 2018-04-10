@@ -50,11 +50,6 @@ body {
     font-size: 30px;
 }
 
-.glyphicon-thumbs-up {
-    font-size: 50px;
-    size: 50px;
-}
-
 #postacie-container {
     display: flex;
     font-size : 15px;

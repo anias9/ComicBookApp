@@ -24,9 +24,9 @@
 
     {% if user.is_authenticated %}
         {% if user.id != comic.owner.id and like.id > 0 %}
-            <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span><a href="{% url 'unlike' comic.id %}">Jednak nie fajny</a><br>
+            <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span>Jednak nie<a href="{% url 'unlike' comic.id %}"> lajkuje</a><br>
         {% elif user.id != comic.owner.id %}
-            <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Fajny</a><br>
+            <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Polajkuj</a><br>
         {% endif %}
     {% endif %}
 

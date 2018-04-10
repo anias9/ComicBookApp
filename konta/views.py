@@ -9,6 +9,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 
+
 def rejestracja(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -29,6 +30,12 @@ def moje_konto(request):
     return render(request, 'moje_konto.html', context)
 
 
+def delete_konto(request):
+    user = User.objects.get(pk= request.user.id)
+    user.delete()
+    return redirect('home')
+
+
 class UserUpdateView(UpdateView):
     form_class = UserInformationUpdateForm
     template_name = 'moje_dane.html'
@@ -42,7 +49,7 @@ def zmiana_hasla(request):
             form = PasswordChangeForm(request.user, request.POST)
             if form.is_valid():
                 user = form.save()
-                update_session_auth_hash(request, user)  # Important!
+                update_session_auth_hash(request, user)
                 messages.success(request, 'Twoje hasło zostało zmienione!')
                 return redirect('zmiana_hasla')
             else:

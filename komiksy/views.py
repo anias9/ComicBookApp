@@ -26,6 +26,15 @@ def najlepsze(request):
     return render(request, 'najlepsze.html', {'comics':comics})
 
 
+def polubione(request):
+    comics = Votes.objects.filter(uzytkownik=request.user)
+    return render(request, 'polubione.html', {'comics':comics})
+
+
+def ulubione(request):
+    comics = Favorite.objects.filter(uzytkownik=request.user)
+    return render(request, 'ulubione.html', {'comics':comics})
+
 def sample(request):
     return render(request, 'sample.html')
 
@@ -38,7 +47,7 @@ def moje_komentarze(request):
 def favorite(request, comic_id):
     comic = Comic.objects.get(pk = comic_id)
     f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
-    if f.count() > 0 :
+    if f.count() > 0:
         return redirect('detail', comic_id)
     f2 = Favorite.objects.create(uzytkownik=request.user, comic = comic)
     f2.save()
@@ -71,11 +80,6 @@ def unlike(request, comic_id):
     comic.likes = comic.likes - 1
     comic.save()
     return redirect('detail', comic_id)
-
-
-def ulubione(request):
-    comics = Favorite.objects.filter(uzytkownik=request.user)
-    return render(request, 'ulubione.html', {'comics':comics})
 
 
 def detail(request, comic_id):

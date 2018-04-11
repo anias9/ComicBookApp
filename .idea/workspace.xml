@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6e3f23f6-53f6-4da9-9003-f9dbf3411139" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komiksy/admin.py" afterPath="$PROJECT_DIR$/komiksy/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komiksy/views.py" afterPath="$PROJECT_DIR$/komiksy/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/urls.py" afterPath="$PROJECT_DIR$/myapp/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/baza.html" afterPath="$PROJECT_DIR$/templates/baza.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/detail.html" afterPath="$PROJECT_DIR$/templates/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/najlepsze.html" afterPath="$PROJECT_DIR$/templates/najlepsze.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/profil.html" afterPath="$PROJECT_DIR$/templates/profil.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/rysuj.html" afterPath="$PROJECT_DIR$/templates/rysuj.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="najlepsze.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="najlepsze.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/najlepsze.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -100,18 +94,18 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+            <state relative-caret-position="345">
+              <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/komiksy/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5295">
-              <caret line="353" column="0" lean-forward="true" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
+            <state relative-caret-position="-1125">
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -143,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/komiksy/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="660">
-              <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="14" />
+              <caret line="46" column="4" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -243,13 +237,13 @@
         <option value="$PROJECT_DIR$/templates/stworzone.html" />
         <option value="$PROJECT_DIR$/komiksy/admin.py" />
         <option value="$PROJECT_DIR$/templates/rysuj.html" />
-        <option value="$PROJECT_DIR$/templates/detail.html" />
         <option value="$PROJECT_DIR$/templates/profil.html" />
         <option value="$PROJECT_DIR$/myapp/urls.py" />
         <option value="$PROJECT_DIR$/templates/moje_sub.html" />
-        <option value="$PROJECT_DIR$/komiksy/views.py" />
         <option value="$PROJECT_DIR$/templates/baza.html" />
         <option value="$PROJECT_DIR$/templates/najlepsze.html" />
+        <option value="$PROJECT_DIR$/templates/detail.html" />
+        <option value="$PROJECT_DIR$/komiksy/views.py" />
       </list>
     </option>
   </component>
@@ -260,7 +254,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1366" />
     <option name="y" value="-1" />
     <option name="width" value="1280" />
     <option name="height" value="1024" />
@@ -306,12 +299,6 @@
               <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
@@ -560,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523404690217</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added subscription">
+      <created>1523477559822</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1523477559822</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -578,13 +572,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-1" width="1280" height="1024" extended-state="6" />
+    <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20421393" sideWeight="0.49014777" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19090909" sideWeight="0.49014777" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.4969697" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.011345219" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.010606061" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -634,7 +628,8 @@
     <MESSAGE value="added ulubione" />
     <MESSAGE value="added like, unlike" />
     <MESSAGE value="added" />
-    <option name="LAST_COMMIT_MESSAGE" value="added" />
+    <MESSAGE value="added subscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="added subscription" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -898,7 +893,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -927,26 +922,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="670">
           <caret line="71" column="62" lean-forward="false" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/polubione.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -962,18 +941,8 @@
     <entry file="file://$PROJECT_DIR$/komiksy/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
-          <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="14" />
+          <caret line="46" column="4" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/komiksy/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5295">
-          <caret line="353" column="0" lean-forward="true" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -993,11 +962,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/polubione.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/najlepsze.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/komiksy/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1125">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

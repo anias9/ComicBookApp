@@ -15,24 +15,21 @@
         {% if user.id == comic.owner.id %}
             <a href = "{% url 'delete_comic' comic.id %}">
                 <span class="glyphicon glyphicon-trash"></span> usuń</a>
-        {% endif %}
-        {% if user.id != comic.owner.id and fav.id > 0 %}
-            <span class="glyphicon glyphicon-heart" style="color: #ac2925; font-size: 50px" ></span> <p>Ulubiony</p><a href="{% url 'unfavorite' comic.id %}">Usuń z ulubionych</a><br>
-        {% elif user.id != comic.owner.id %}
-            <a href="{% url 'favorite' comic.id %}"><span class="glyphicon glyphicon-heart-empty" style="color: #ac2925; font-size: 50px"></span> Dodaj do ulubionych</a><br>
-        {% endif %}
-    {% endif %}
-
-
-
-    {# Lajkowanie i odlajkowanie komiksu dla innych uzytkowników #}
-    {% if user.is_authenticated %}
-        {% if user.id != comic.owner.id and like.id > 0 %}
-            <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span>Jednak nie<a href="{% url 'unlike' comic.id %}"> lajkuje</a><br>
-        {% elif user.id != comic.owner.id %}
-            <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Polajkuj</a><br>
+        {% else  %}
+            {% if fav.id > 0 %}
+                <span class="glyphicon glyphicon-heart" style="color: #ac2925; font-size: 50px" ></span> <p>Ulubiony</p><a href="{% url 'unfavorite' comic.id %}">Usuń z ulubionych</a><br>
+            {% else %}
+                <a href="{% url 'favorite' comic.id %}"><span class="glyphicon glyphicon-heart-empty" style="color: #ac2925; font-size: 50px"></span> Dodaj do ulubionych</a><br>
+            {% endif %}
+            {% if likes.id > 0 %}
+                <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span>Jednak nie<a href="{% url 'unlike' comic.id %}"> lajkuje</a><br>
+            {% else %}
+                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Polajkuj</a><br>
+            {% endif %}
         {% endif %}
     {% endif %}
+
+
 
 
     {# Pobieranie komiksu #}

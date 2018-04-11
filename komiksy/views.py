@@ -61,7 +61,7 @@ def detail(request, comic_id):
                 subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
                 context = {
                     'comic': comic,
-                    'like': likes,
+                    'likes': likes,
                     'subs': subs,
                 }
                 return render(request, 'detail.html', context)
@@ -92,7 +92,7 @@ def detail(request, comic_id):
                 likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
                 context = {
                     'comic': comic,
-                    'like': likes,
+                    'likes': likes,
                 }
                 return render(request, 'detail.html', context)
     except Comic.DoesNotExist:

@@ -7,8 +7,18 @@
     <br>
 
     Komiksy użytkownika: {{ owner }}<br>
+
+    {# Subsrypcja twórcy komiksu, anulowanie subskrypcji  #}
+    {% if user.is_authenticated %}
+        {% if user.id != owner.id and subs.id > 0 %}
+            <a href="{% url 'unsubscribe_user' owner.id %}">Anuluj subsypcje</a><br>
+        {% elif user.id != owner.id %}
+            <a href="{% url 'subscribe_user' owner.id %}">Subskrybuj</a>
+        {% endif %}
+    {% endif %}
+
+
     {% if comics %}
-       Liczba komiksów : {{ comics.count }}
         {% for comic in comics %}
             <br>
 

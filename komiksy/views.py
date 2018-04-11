@@ -1,33 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import ComicForm, ElementsForm
 from django.http import Http404
-from .models import Comic, User, Elementy, Favorite, Votes
+from .models import Comic, User, Elementy, Favorite, Votes, Subscription
 from django.views.generic import CreateView
 from PIL import Image, ImageDraw, ImageFont
 import uuid
 
 
-def favorite(request, comic_id):
-    comic = Comic.objects.get(pk=comic_id)
-    f = Favorite.objects.filter(uzytkownik=request.user, comic=comic)
-    if f.count() > 0:
-        return redirect('detail', comic_id)
-    f2 = Favorite.objects.create(uzytkownik=request.user, comic=comic)
-    f2.save()
-    return redirect('detail', comic_id)
-
-
-def unfavorite(request, comic_id):
-    comic = Comic.objects.get(pk=comic_id)
-    f1 = Favorite.objects.get(uzytkownik=request.user, comic= comic)
-    f1.delete()
-    return redirect('detail', comic_id)
-
-
 def like(request, comic_id):
     comic = Comic.objects.get(pk=comic_id)
-    l = Votes.objects.filter(uzytkownik=request.user, comic= comic)
-    if l.count() > 0:
+    likes = Votes.objects.filter(uzytkownik=request.user, comic= comic)
+    if likes.count() > 0:
         return redirect('detail', comic_id)
     l2 = Votes.objects.create(uzytkownik=request.user, comic= comic)
     l2.save()
@@ -47,31 +30,69 @@ def unlike(request, comic_id):
 
 def detail(request, comic_id):
     try:
-        comic = Comic.objects.get(pk = comic_id)
+        comic = Comic.objects.get(pk=comic_id)
+        subscribed = User.objects.get(pk=comic.owner_id)
         if request.user.is_authenticated:
             f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
             l = Votes.objects.filter(uzytkownik=request.user, comic= comic)
-            if f.count() > 0 and l.count() > 0 :
+            sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
+            if f.count() > 0 and l.count() > 0 and sub.count() > 0:
                 fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
-                like = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                subs = Subscription.objects.get(subscribed=comic.owner_id, subscriber=request.user)
                 context = {
                     'fav': fav,
                     'comic': comic,
-                    'like':like,
+                    'likes':likes,
+                    'subs': subs,
                 }
                 return render(request, 'detail.html', context)
-            elif f.count() > 0:
+            elif f.count() > 0 and l.count() > 0:
                 fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
                 context = {
                     'fav': fav,
                     'comic': comic,
+                    'likes': likes,
+                }
+                return render(request, 'detail.html', context)
+            elif l.count() > 0 and sub.count() > 0 :
+                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
+                context = {
+                    'comic': comic,
+                    'like': likes,
+                    'subs': subs,
+                }
+                return render(request, 'detail.html', context)
+            elif f.count() > 0 and sub.count() > 0 :
+                subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
+                fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+                context = {
+                    'comic': comic,
+                    'subs': subs,
+                    'fav': fav,
+                }
+                return render(request, 'detail.html', context)
+            elif sub.count() > 0 :
+                subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
+                context = {
+                    'comic': comic,
+                    'subs':subs,
+                }
+                return render(request, 'detail.html', context)
+            elif f.count() > 0 :
+                fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+                context = {
+                    'comic': comic,
+                    'fav': fav,
                 }
                 return render(request, 'detail.html', context)
             elif l.count() > 0:
-                like = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
                 context = {
                     'comic': comic,
-                    'like':like,
+                    'like': likes,
                 }
                 return render(request, 'detail.html', context)
     except Comic.DoesNotExist:
@@ -79,23 +100,42 @@ def detail(request, comic_id):
     return render(request, 'detail.html', {'comic':comic})
 
 
-def uzytkownicy(request):
-    users = User.objects.filter(is_superuser=0)
-    comics = Comic.objects.all()
-    context = {
-        'users': users,
-        'comics': comics,
-    }
-    return render(request, 'uzytkownicy.html', context)
+def subscribe_comic_owner(request, comic_id):
+    comic = Comic.objects.get(pk=comic_id)
+    subscribed = User.objects.get(pk = comic.owner_id)
+    sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
+    if sub.count() > 0:
+        return redirect('detail', comic_id)
+    sub1 = Subscription.objects.create(subscribed=subscribed, subscriber=request.user)
+    sub1.save()
+    return redirect('detail', comic_id)
+
+
+def unsubscribe_comic_owner(request, comic_id):
+    comic = Comic.objects.get(pk=comic_id)
+    subscribed = User.objects.get(pk = comic.owner_id)
+    sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
+    sub.delete()
+    return redirect('detail', comic_id)
 
 
 def profil(request, owner_id):
     try:
         user_id = owner_id
         owner = User.objects.get(pk=user_id)
+        comics = Comic.objects.filter(owner_id=user_id)
+        if request.user.is_authenticated:
+            sub = Subscription.objects.filter(subscribed=owner, subscriber=request.user)
+            if sub.count() > 0 :
+                subs = Subscription.objects.get(subscribed=owner, subscriber=request.user)
+                context = {
+                    'owner': owner,
+                    'comics': comics,
+                    'subs': subs,
+                }
+                return render(request, 'profil.html', context)
     except User.DoesNotExist:
         raise Http404("Podany użytkownik nie istnieje")
-    comics = Comic.objects.filter(owner_id=user_id)
     context = {
         'owner': owner,
         'comics': comics,
@@ -248,6 +288,50 @@ def stworz(request, elementy_id):
     return render(request, 'stworz.html', context)
 
 
+def favorite(request, comic_id):
+    comic = Comic.objects.get(pk=comic_id)
+    f = Favorite.objects.filter(uzytkownik=request.user, comic=comic)
+    if f.count() > 0:
+        return redirect('detail', comic_id)
+    f2 = Favorite.objects.create(uzytkownik=request.user, comic=comic)
+    f2.save()
+    return redirect('detail', comic_id)
+
+
+def unfavorite(request, comic_id):
+    comic = Comic.objects.get(pk=comic_id)
+    f1 = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+    f1.delete()
+    return redirect('detail', comic_id)
+
+
+def subscribe_user(request, owner_id):
+    subscribed = User.objects.get(pk=owner_id)
+    sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
+    if sub.count() > 0:
+        return redirect('profil', owner_id)
+    sub1 = Subscription.objects.create(subscribed=subscribed, subscriber=request.user)
+    sub1.save()
+    return redirect('profil', owner_id)
+
+
+def unsubscribe_user(request, owner_id):
+    subscribed = User.objects.get(pk=owner_id)
+    sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
+    sub.delete()
+    return redirect('profil', owner_id)
+
+
+def uzytkownicy(request):
+    users = User.objects.filter(is_superuser=0)
+    comics = Comic.objects.all()
+    context = {
+        'users': users,
+        'comics': comics,
+    }
+    return render(request, 'uzytkownicy.html', context)
+
+
 def kolekcja(request):
     all_comics = Comic.objects.filter(publiczny=1)
     return render(request, 'kolekcja.html',  {'all_comics' : all_comics,})
@@ -258,14 +342,19 @@ def home(request):
     return render(request, 'home.html', {'last_comics':last_comics})
 
 
-# def postacie(request):
-    # return render(request, 'postacie.html')
+def postacie(request):
+     return render(request, 'postacie.html')
 
 
 # 10 najlepszych komiksów, sortowne od największej ilości lajkow
 def najlepsze(request):
     comics = Comic.objects.filter(publiczny=1, likes__gt=0).order_by('-likes')[:10]
     return render(request, 'najlepsze.html', {'comics':comics})
+
+
+def moje_sub(request):
+    users = Subscription.objects.filter(subscriber=request.user)
+    return render(request, 'moje_sub.html', {'users': users})
 
 
 def polubione(request):
@@ -276,7 +365,6 @@ def polubione(request):
 def ulubione(request):
     comics = Favorite.objects.filter(uzytkownik=request.user)
     return render(request, 'ulubione.html', {'comics':comics})
-
 
 
 class ComicCreate(CreateView):

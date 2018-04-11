@@ -1,0 +1,24 @@
+{% extends "baza.html" %}
+
+{% block title %}Moje subsrypcje{% endblock %}
+{% block content %}
+
+{% if users %}
+        {% for user in users %}
+            <div class = "col-sm-4">
+
+                {{ forloop.counter }}.
+                <a href = "{% url 'profil' user.subscribed.id %}" class = "user"><span class="glyphicon glyphicon-user"></span> {{ user.subscribed.username }} </a><br>
+
+            </div>
+        {%  endfor %}
+    {% else %}
+    Brak subów
+  {% endif %}
+
+
+
+    <br><br><br><br>
+    <br><br>
+
+{% endblock %}

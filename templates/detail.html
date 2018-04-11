@@ -10,7 +10,6 @@
             <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
         </a>
 
-
     {# Usuwanie dla twórców, dodawanie do ulubionych i usuwanie z ulubionych dla innych użytkowników #}
     {% if user.is_authenticated %}
         {% if user.id == comic.owner.id %}
@@ -45,8 +44,16 @@
     Tytuł : {{ comic.title }} <br>
     Data utworzenia: {{ comic.created }}<br>
     Lajki : {{ comic.likes }}<br>
-    Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a><br>
+    Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a>
 
+    {# Subsrypcja twórcy komiksu, anulowanie subskrypcji  #}
+    {% if user.is_authenticated %}
+        {% if user.id != comic.owner.id and subs.id > 0 %}
+            <a href="{% url 'unsubscribe_comic_owner' comic.id %}">Anuluj subsypcje</a><br>
+        {% elif user.id != comic.owner.id %}
+            <a href="{% url 'subscribe_comic_owner' comic.id %}">Subskrybuj</a>
+        {% endif %}
+    {% endif %}
 
     {# Liczba komentarzy #}
     <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
@@ -64,7 +71,6 @@
 
         </div>
     {% endfor %}
-
 
 
     {# Dodadnie komentarza #}

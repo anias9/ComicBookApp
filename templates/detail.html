@@ -30,8 +30,6 @@
     {% endif %}
 
 
-
-
     {# Pobieranie komiksu #}
     <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
         <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
@@ -43,6 +41,7 @@
     Lajki : {{ comic.likes }}<br>
     Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a>
 
+
     {# Subsrypcja twórcy komiksu, anulowanie subskrypcji  #}
     {% if user.is_authenticated %}
         {% if user.id != comic.owner.id and subs.id > 0 %}
@@ -53,42 +52,40 @@
     {% endif %}
 
     {# Liczba komentarzy #}
-    <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span></p>
+    <p style = "font-size:40px ; background-color: #2afffc"><i class="glyphicon glyphicon-comment"></i> Komentarze <span class="badge">{{all_comments.count }}</span></p>
     <hr>
 
-    {# Wyswietlanie komentarzy #}
-    {% get_comment_list for comic as comment_list %}
-    {% for comment in comment_list %}
-        <div class="">
-           {{ comment.comment }}
-            <br/>
-            <small><a href = "{% url 'profil' comment.user_id %}">{{ comment.user_name}} </a></small>
-            <small>{{ comment.submit_date }}</small>
-            <hr/>
-
+    <div class = "system-message">
+    {# Wyświetlanie komentarzy #}
+    {% for comment in all_comments %}
+        <div class = "system-message">
+            Treść : {{ comment.text }}<br>
+            Autor : <a href = "{% url 'profil' comment.author.id %}">{{ comment.author }}</a><br>
+            Data dodania {{ comment.created }}<br>
         </div>
+        <hr>
     {% endfor %}
+    </div>
 
 
-    {# Dodadnie komentarza #}
+    {# Dodawanie komentarzy #}
     {% if user.is_authenticated %}
-        {% get_comment_form for comic as form %}
-        <form action="{% comment_form_target %}" method="POST">
-            {% csrf_token %}
-            {{ form.comment }}
-            {{ form.honeypot }}
-            {{ form.content_type }}
-            {{ form.object_pk }}
-            {{ form.timestamp }}
-            {{ form.security_hash }}
-            <input type="hidden" name="next" value="{% url 'detail' comic.id %}" /><br>
-            <input type="submit" value="Dodaj komentarz" id="id_submit" />
-            <input type="submit" name="preview" value="Preview">
-        </form>
-    {% else %}
-        <p>Proszę się <a href="{% url 'logowanie' %}">zalogować,</a> aby dodać komentarz.</p>
-    {% endif %}
+        {% if user.id != comic.owner.id and comm.id > 0 %}
+            Już dodałes komentarz do tego komiksu<br>
 
+        {%  elif user.id != comic.owner.id %}
+                <form action = "." method = "POST">
+                    {% csrf_token %}
+                    <div class = "col-sm-6">
+                        <textarea class = "tekst" name="text"  style="width: 150px; height: 100px" placeholder="Dodaj komentarz" >{{ text }}</textarea>
+                    </div>
+
+                    <input type='submit' value='Zapisz' />
+                </form>
+        {% endif %}
+        {% else %}
+            <p>Proszę się <a href="{% url 'logowanie' %}">zalogować,</a> aby dodać komentarz.</p>
+    {% endif %}
 
     Wróć na stronę <a href = " {% url 'home'  %}"> GŁÓWNĄ </a>
 

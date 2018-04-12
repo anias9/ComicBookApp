@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
-
 class Elementy(models.Model):
     background = models.ImageField(upload_to='media', blank=True, null=True)
     character1 = models.ImageField(upload_to='media', blank=True, null=True)
@@ -45,5 +44,13 @@ class Votes(models.Model):
 class Subscription(models.Model):
     subscribed = models.ForeignKey(User, on_delete=models.CASCADE,  related_name='subscribed')
     subscriber = models.ForeignKey(User, on_delete=models.CASCADE,  related_name='subscriber')
+
+
+class Comments(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
+    created = models.DateTimeField('Data dodania', auto_now_add= True)
+    text = models.CharField('Treść komentarza ', max_length = 100)
+
 
 

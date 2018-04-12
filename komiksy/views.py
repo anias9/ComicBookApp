@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .forms import ComicForm, ElementsForm
+from .forms import ComicForm, ElementsForm, CommentForm
 from django.http import Http404
-from .models import Comic, User, Elementy, Favorite, Votes, Subscription
+from .models import Comic, User, Elementy, Favorite, Votes, Subscription, Comments
 from django.views.generic import CreateView
 from PIL import Image, ImageDraw, ImageFont
 from django.db.models import Q
@@ -33,72 +33,203 @@ def detail(request, comic_id):
     try:
         comic = Comic.objects.get(pk=comic_id)
         subscribed = User.objects.get(pk=comic.owner_id)
+        form = CommentForm(request.POST)
+        all_comments = Comments.objects.filter(comic = comic)
+
         if request.user.is_authenticated:
             f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
             l = Votes.objects.filter(uzytkownik=request.user, comic= comic)
             sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
-            if f.count() > 0 and l.count() > 0 and sub.count() > 0:
-                fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
-                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
+            com = Comments.objects.filter(author=request.user, comic = comic)
+
+            if f.count() > 0 and l.count() > 0 and sub.count() > 0 and com.count() > 0:
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic=comic)
+                subs = Subscription.objects.get(subscribed=comic.owner_id, subscriber=request.user)
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'fav': fav,
+                    'comic': comic,
+                    'likes': likes,
+                    'subs': subs,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
+            elif f.count() > 0 and l.count() > 0 and sub.count() > 0:
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic=comic)
                 subs = Subscription.objects.get(subscribed=comic.owner_id, subscriber=request.user)
                 context = {
                     'fav': fav,
                     'comic': comic,
                     'likes': likes,
                     'subs': subs,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
+
+            elif l.count() > 0 and sub.count() > 0 and com.count() > 0:
+                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'comic': comic,
+                    'likes': likes,
+                    'subs': subs,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
+            elif f.count() > 0 and l.count() > 0 and com.count() > 0:
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic=comic)
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'fav': fav,
+                    'comic': comic,
+                    'likes': likes,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
+            elif f.count() > 0 and sub.count() > 0 and com.count() > 0:
+                subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
+                comm = Comments.objects.get(author=request.user, comic =comic)
+                context = {
+                    'comic': comic,
+                    'subs': subs,
+                    'fav': fav,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
             elif f.count() > 0 and l.count() > 0:
-                fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
-                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic=comic)
                 context = {
                     'fav': fav,
                     'comic': comic,
                     'likes': likes,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
-            elif l.count() > 0 and sub.count() > 0 :
+
+            elif l.count() > 0 and sub.count() > 0:
                 likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
                 subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
                 context = {
                     'comic': comic,
                     'likes': likes,
                     'subs': subs,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
-            elif f.count() > 0 and sub.count() > 0 :
+
+            elif f.count() > 0 and sub.count() > 0:
                 subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
-                fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
                 context = {
                     'comic': comic,
                     'subs': subs,
                     'fav': fav,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
+
+            elif sub.count() > 0 and com.count() > 0:
+                subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'comic': comic,
+                    'subs': subs,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
+            elif f.count() > 0 and com.count() > 0:
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'comic': comic,
+                    'fav': fav,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
+            elif l.count() > 0 and com.count() > 0:
+                likes = Votes.objects.get(uzytkownik=request.user, comic=comic)
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'comic': comic,
+                    'likes': likes,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
             elif sub.count() > 0 :
                 subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
                 context = {
                     'comic': comic,
                     'subs': subs,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
             elif f.count() > 0 :
-                fav = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+                fav = Favorite.objects.get(uzytkownik=request.user, comic=comic)
                 context = {
                     'comic': comic,
                     'fav': fav,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
             elif l.count() > 0:
-                likes = Votes.objects.get(uzytkownik=request.user, comic= comic)
+                likes = Votes.objects.get(uzytkownik=request.user, comic=comic)
                 context = {
                     'comic': comic,
                     'likes': likes,
+                    'form': form,
+                    'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
+            elif com.count() > 0:
+                comm = Comments.objects.get(author=request.user, comic=comic)
+                context = {
+                    'comic': comic,
+                    'comm': comm,
+                    'all_comments': all_comments,
+                }
+                return render(request, 'detail.html', context)
+
+        if request.method == 'POST':
+            form.instance.text = request.POST.get('text', None)
+            form.instance.comic = comic
+            form.instance.author = request.user
+
+            if form.is_valid():
+                form.save()
+
+                return redirect('detail', comic_id)
+            else:
+                form = CommentForm()
+
     except Comic.DoesNotExist:
         raise Http404("Podany komiks nie istnieje")
-    return render(request, 'detail.html', {'comic': comic})
+    return render(request, 'detail.html', {'comic': comic, 'form': form, 'all_comments': all_comments})
 
 
 def subscribe_comic_owner(request, comic_id):

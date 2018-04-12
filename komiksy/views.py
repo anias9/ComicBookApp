@@ -4,6 +4,7 @@ from django.http import Http404
 from .models import Comic, User, Elementy, Favorite, Votes, Subscription
 from django.views.generic import CreateView
 from PIL import Image, ImageDraw, ImageFont
+from django.db.models import Q
 import uuid
 
 
@@ -43,7 +44,7 @@ def detail(request, comic_id):
                 context = {
                     'fav': fav,
                     'comic': comic,
-                    'likes':likes,
+                    'likes': likes,
                     'subs': subs,
                 }
                 return render(request, 'detail.html', context)
@@ -78,7 +79,7 @@ def detail(request, comic_id):
                 subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
                 context = {
                     'comic': comic,
-                    'subs':subs,
+                    'subs': subs,
                 }
                 return render(request, 'detail.html', context)
             elif f.count() > 0 :
@@ -97,7 +98,7 @@ def detail(request, comic_id):
                 return render(request, 'detail.html', context)
     except Comic.DoesNotExist:
         raise Http404("Podany komiks nie istnieje")
-    return render(request, 'detail.html', {'comic':comic})
+    return render(request, 'detail.html', {'comic': comic})
 
 
 def subscribe_comic_owner(request, comic_id):
@@ -189,15 +190,15 @@ def stworzone(request, elementy_id):
         elementy = Elementy.objects.get(pk = elementy_id)
 
         im1 = Image.open(elementy.background)
-        img1 = im1.resize((600,600))
+        img1 = im1.resize((600, 600))
         im2 = Image.open(elementy.character1)
-        img2 = im2.resize((250,250))
+        img2 = im2.resize((250, 250))
         im3 = Image.open(elementy.character2)
-        img3 = im3.resize((250,250))
+        img3 = im3.resize((250, 250))
         im4 = Image.open(elementy.chat1)
-        img4 = im4.resize((280,280))
+        img4 = im4.resize((280, 280))
         im5 = Image.open(elementy.chat2)
-        img5 = im5.resize((280,280))
+        img5 = im5.resize((280, 280))
 
         img1.paste(img2, (0, 350), img2)
         img1.paste(img3, (330, 350), img3)
@@ -250,7 +251,6 @@ def stworzone(request, elementy_id):
             form.instance.owner = request.user
             form.instance.comics = elementy.background
             form.instance.element = elementy
-
 
             if form.is_valid():
                 form.save()
@@ -325,6 +325,11 @@ def unsubscribe_user(request, owner_id):
 def uzytkownicy(request):
     users = User.objects.filter(is_superuser=0)
     comics = Comic.objects.all()
+    query = request.GET.get("q")
+    if query:
+        users = users.filter(
+            Q(username__contains=query)
+        )
     context = {
         'users': users,
         'comics': comics,
@@ -334,22 +339,27 @@ def uzytkownicy(request):
 
 def kolekcja(request):
     all_comics = Comic.objects.filter(publiczny=1)
-    return render(request, 'kolekcja.html',  {'all_comics' : all_comics,})
+    query = request.GET.get("q")
+    if query:
+        all_comics = all_comics.filter(
+            Q(title__contains=query)
+        )
+    return render(request, 'kolekcja.html',  {'all_comics': all_comics})
 
 
 def home(request):
     last_comics = Comic.objects.filter(publiczny=1)[:1]
-    return render(request, 'home.html', {'last_comics':last_comics})
+    return render(request, 'home.html', {'last_comics': last_comics})
 
 
 def postacie(request):
-     return render(request, 'postacie.html')
+    return render(request, 'postacie.html')
 
 
 # 10 najlepszych komiksów, sortowne od największej ilości lajkow
 def najlepsze(request):
     comics = Comic.objects.filter(publiczny=1, likes__gt=0).order_by('-likes')[:10]
-    return render(request, 'najlepsze.html', {'comics':comics})
+    return render(request, 'najlepsze.html', {'comics': comics})
 
 
 def moje_sub(request):
@@ -359,12 +369,12 @@ def moje_sub(request):
 
 def polubione(request):
     comics = Votes.objects.filter(uzytkownik=request.user)
-    return render(request, 'polubione.html', {'comics':comics})
+    return render(request, 'polubione.html', {'comics': comics})
 
 
 def ulubione(request):
     comics = Favorite.objects.filter(uzytkownik=request.user)
-    return render(request, 'ulubione.html', {'comics':comics})
+    return render(request, 'ulubione.html', {'comics': comics})
 
 
 class ComicCreate(CreateView):

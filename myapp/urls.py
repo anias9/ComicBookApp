@@ -54,7 +54,8 @@ urlpatterns = [
     re_path(r'^stworz/(?P<elementy_id>[0-9]+)/$', views.stworz, name= 'stworz'),
     re_path(r'^profil/(?P<owner_id>[0-9]+)/subscribe_user/$', views.subscribe_user, name='subscribe_user'),
     re_path(r'^profil/(?P<owner_id>[0-9]+)/unsubscribe_user/$', views.unsubscribe_user, name='unsubscribe_user'),
-
+    re_path(r'^uzytkownicy/(?P<filter_by>[a-zA_Z]+)/$', views.uzytkownicy, name='uzytkownicy'),
+    re_path(r'^kolekcja/(?P<filter_by>[a-zA_Z]+)/$', views.kolekcja, name='kolekcja'),
 
     re_path(r'^profil/(?P<owner_id>[0-9]+)/$', views.profil, name='profil'),
     re_path(r'^stworzone/(?P<elementy_id>[0-9]+)/$', views.stworzone, name= 'stworzone'),

@@ -9,5 +9,5 @@ Last part is type the text into the bubbles.
 Log-in user has ability to save created comics to database, managed them and comment comics from other users. 
 
 # Requirements
-Django2.0, Python, PIL, django-contrib-comments, mysql
+Django2.0, Python, PIL, mysql
 

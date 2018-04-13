@@ -1,0 +1,23 @@
+{% extends "baza.html" %}
+{% block title %}Komiksy{% endblock %}
+
+{% block content %}
+
+
+            {% if comm %}
+                {% for com in comm %}
+                        Tresc : {{ com.text }}
+                        Data dodania: {{ com.created }}
+                        Komiks :
+                        <a href="{% url 'detail' com.comic.id %} ">
+                            <img src =  "{{ com.comic.comics.url }}" class= "img-responsive"  width = "100" height="100">
+                        </a>
+                        <a href="{% url 'usun_komentarz' com.id %} ">
+                            <span class="glyphicon glyphicon-remove" style="color: #de0024; font-size: 30px" ></span>Usuń komentarz
+                        </a>
+                {%  endfor %}
+            {% else %}
+                <h2>Nie dodałeś żadnych komentarzy</h2>
+            {% endif %}
+
+{% endblock %}

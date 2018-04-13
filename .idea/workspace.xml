@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e3f23f6-53f6-4da9-9003-f9dbf3411139" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komiksy/views.py" afterPath="$PROJECT_DIR$/komiksy/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/settings.py" afterPath="$PROJECT_DIR$/myapp/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/urls.py" afterPath="$PROJECT_DIR$/myapp/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/baza.html" afterPath="$PROJECT_DIR$/templates/baza.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/detail.html" afterPath="$PROJECT_DIR$/templates/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/kolekcja.html" afterPath="$PROJECT_DIR$/templates/kolekcja.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/najlepsze.html" afterPath="$PROJECT_DIR$/templates/najlepsze.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/polubione.html" afterPath="$PROJECT_DIR$/templates/polubione.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/ulubione.html" afterPath="$PROJECT_DIR$/templates/ulubione.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -587,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523572888558</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added comments">
+      <created>1523649867564</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1523649867564</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">

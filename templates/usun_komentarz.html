@@ -1,0 +1,13 @@
+{% extends "baza.html" %}
+
+{% block title %}Ulubione{% endblock %}
+
+{% block content %}
+
+
+    Komentarz usunięto pomyślnie.
+
+    <span class="glyphicon glyphicon-comment"  ></span>Zobacz wszystkie dodane <a href="{% url 'moje_komentarze' %}"> komentarze</a>
+    Wejdź na stronę <span class="glyphicon glyphicon-home"  ></span> <a href="{% url 'home' %}"> główną</a>
+
+{% endblock %}

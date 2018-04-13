@@ -470,12 +470,17 @@ def uzytkownicy(request):
 
 def kolekcja(request):
     all_comics = Comic.objects.filter(publiczny=1)
+    comm = Comments.objects.filter(comic=all_comics)
     query = request.GET.get("q")
     if query:
         all_comics = all_comics.filter(
             Q(title__contains=query)
         )
-    return render(request, 'kolekcja.html',  {'all_comics': all_comics})
+    context = {
+        'all_comics': all_comics,
+        'comm': comm,
+    }
+    return render(request, 'kolekcja.html',  context)
 
 
 def home(request):
@@ -506,6 +511,24 @@ def polubione(request):
 def ulubione(request):
     comics = Favorite.objects.filter(uzytkownik=request.user)
     return render(request, 'ulubione.html', {'comics': comics})
+
+
+def moje_komentarze(request):
+    comm = Comments.objects.filter(author=request.user)
+    return render(request, 'moje_komentarze.html', {'comm': comm})
+
+
+def usun_komentarz(request, comm_id):
+    comm = Comments.objects.get(pk = comm_id)
+    comm.delete()
+    return render(request, 'usun_komentarz.html')
+
+
+def usun_komentarz2(request, comm_id):
+    comm = Comments.objects.get(pk = comm_id)
+    comm.delete()
+    return render(request, 'usun_komentarz.html')
+
 
 
 class ComicCreate(CreateView):

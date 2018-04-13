@@ -2,7 +2,6 @@
 {% block title %}Moje konto{% endblock %}
 
 {% block content %}
-    {% load comments %}
 
 
 
@@ -59,9 +58,15 @@
     {# Wyświetlanie komentarzy #}
     {% for comment in all_comments %}
         <div class = "system-message">
+
             Treść : {{ comment.text }}<br>
             Autor : <a href = "{% url 'profil' comment.author.id %}">{{ comment.author }}</a><br>
             Data dodania {{ comment.created }}<br>
+            {% if comment.author.id == user.id %}
+                <a href="{% url 'usun_komentarz' comment.id %} ">
+                    <span class="glyphicon glyphicon-remove" style="color: #000000; font-size: 50px" ></span>Usuń komentarz
+                </a>
+            {% endif %}
         </div>
         <hr>
     {% endfor %}

@@ -12,10 +12,7 @@
         </div>
     </form>
 
-
-
     <div id="image-container" >
-        {% load comments %}
     {% if all_comics %}
         {% for comic in all_comics %}
             {% if forloop.counter|divisibleby:"5"  %}
@@ -27,7 +24,7 @@
                         </a>
                     <figcaption>
                         {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
-                        Komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span><br>
+                        Komentarzy: <span class="badge"></span><br>
                       <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
                     </figcaption>
                     </figure>
@@ -39,7 +36,7 @@
                     </a>
                     <figcaption>
                         {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
-                        Komentarzy: <span class="badge">{% get_comment_count for comic as comment_count %} {{ comment_count }}</span><br>
+                        Komentarzy: <span class="badge"></span><br>
                         <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
                     </figcaption>
                 </figure>

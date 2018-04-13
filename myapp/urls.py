@@ -29,7 +29,6 @@ from komiksy import views
 
 urlpatterns = [
     re_path(r'^$', views.home, name='home'),
-    re_path(r'^comments/', include('django_comments.urls')),
 
     re_path(r'^zmiana_hasla/$', konta_views.zmiana_hasla, name='zmiana_hasla'),
     re_path(r'^moje_dane/$', konta_views.UserUpdateView.as_view(), name='moje_dane'),
@@ -56,12 +55,15 @@ urlpatterns = [
     re_path(r'^profil/(?P<owner_id>[0-9]+)/unsubscribe_user/$', views.unsubscribe_user, name='unsubscribe_user'),
     re_path(r'^uzytkownicy/(?P<filter_by>[a-zA_Z]+)/$', views.uzytkownicy, name='uzytkownicy'),
     re_path(r'^kolekcja/(?P<filter_by>[a-zA_Z]+)/$', views.kolekcja, name='kolekcja'),
+    re_path(r'^moje_komentarze/(?P<comm_id>[0-9]+)/usun_komentarz/$', views.usun_komentarz, name='usun_komentarz'),
+    re_path(r'^(?P<comic_id>[0-9]+)/usun_komentarz2/$', views.usun_komentarz2, name='usun_komentarz2'),
 
     re_path(r'^profil/(?P<owner_id>[0-9]+)/$', views.profil, name='profil'),
     re_path(r'^stworzone/(?P<elementy_id>[0-9]+)/$', views.stworzone, name= 'stworzone'),
 
     re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
 
+    re_path(r'^moje_komentarze/$', views.moje_komentarze, name= 'moje_komentarze'),
     re_path(r'^postacie/$', views.postacie, name= 'postacie'),
     re_path(r'^ulubione/$', views.ulubione, name= 'ulubione'),
     re_path(r'^polubione/$', views.polubione, name= 'polubione'),

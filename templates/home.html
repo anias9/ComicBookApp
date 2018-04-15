@@ -4,6 +4,14 @@
     {% block content %}
         {% load static %}
 <br>
+
+        <form role="search" method="get" action="{% url 'szukaj_komiksy' %}">
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Wpisz tytuł komiksu">
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
+            </div>
+        </form>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">

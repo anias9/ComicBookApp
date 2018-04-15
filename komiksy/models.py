@@ -51,6 +51,3 @@ class Comments(models.Model):
     comic = models.ForeignKey(Comic, on_delete=models.CASCADE, related_name='comments')
     created = models.DateTimeField('Data dodania', auto_now_add= True)
     text = models.CharField('Treść komentarza ', max_length = 100)
-
-
-

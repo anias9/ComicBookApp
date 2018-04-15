@@ -54,7 +54,7 @@ urlpatterns = [
     re_path(r'^profil/(?P<owner_id>[0-9]+)/subscribe_user/$', views.subscribe_user, name='subscribe_user'),
     re_path(r'^profil/(?P<owner_id>[0-9]+)/unsubscribe_user/$', views.unsubscribe_user, name='unsubscribe_user'),
     re_path(r'^uzytkownicy/(?P<filter_by>[a-zA_Z]+)/$', views.uzytkownicy, name='uzytkownicy'),
-    re_path(r'^kolekcja/(?P<filter_by>[a-zA_Z]+)/$', views.kolekcja, name='kolekcja'),
+    re_path(r'^szukaj_komiksy/(?P<filter_by>[a-zA_Z]+)/$', views.szukaj_komiksy, name='szukaj_komiksy'),
     re_path(r'^moje_komentarze/(?P<comm_id>[0-9]+)/usun_komentarz/$', views.usun_komentarz, name='usun_komentarz'),
     re_path(r'^(?P<comic_id>[0-9]+)/usun_komentarz2/$', views.usun_komentarz2, name='usun_komentarz2'),
 
@@ -68,6 +68,7 @@ urlpatterns = [
     re_path(r'^ulubione/$', views.ulubione, name= 'ulubione'),
     re_path(r'^polubione/$', views.polubione, name= 'polubione'),
     re_path(r'^kolekcja/$', views.kolekcja, name= 'kolekcja'),
+    re_path(r'^szukaj_komiksy/$', views.szukaj_komiksy, name= 'szukaj_komiksy'),
     re_path(r'^najlepsze/$', views.najlepsze, name= 'najlepsze'),
     re_path(r'^uzytkownicy/$', views.uzytkownicy, name= 'uzytkownicy'),
     re_path(r'^rysuj/$', views.rysuj, name= 'rysuj'),

@@ -6,6 +6,7 @@ from django.views.generic import CreateView
 from PIL import Image, ImageDraw, ImageFont
 from django.db.models import Q
 import uuid
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def like(request, comic_id):
@@ -469,23 +470,34 @@ def uzytkownicy(request):
 
 
 def kolekcja(request):
-    all_comics = Comic.objects.filter(publiczny=1)
-    comm = Comments.objects.all()
-    query = request.GET.get("q")
-    if query:
-        all_comics = all_comics.filter(
-            Q(title__contains=query)
-        )
+    comics = Comic.objects.filter(publiczny=1)
+
+    paginator = Paginator(comics, 8)
+    page = request.GET.get('page')
+
+    try:
+        all_comics = paginator.get_page(page)
+    except PageNotAnInteger:
+        all_comics = paginator.page(1)
+    except EmptyPage:
+        all_comics = paginator.page(paginator.num_pages)
+
     context = {
         'all_comics': all_comics,
-        'comm': comm,
     }
     return render(request, 'kolekcja.html',  context)
 
 
 def home(request):
     last_comics = Comic.objects.filter(publiczny=1)[:1]
-    return render(request, 'home.html', {'last_comics': last_comics})
+    all_comics = Comic.objects.filter(publiczny=1)
+    query = request.GET.get("q")
+    if query:
+        all_comics = all_comics.filter(
+            Q(title__contains=query)
+            )
+
+    return render(request, 'home.html', {'last_comics': last_comics, 'all_comics': all_comics})
 
 
 def postacie(request):
@@ -522,6 +534,16 @@ def usun_komentarz(request, comm_id):
     comm = Comments.objects.get(pk = comm_id)
     comm.delete()
     return render(request, 'usun_komentarz.html')
+
+
+def szukaj_komiksy(request):
+    all_comics = Comic.objects.filter(publiczny=1)
+    query = request.GET.get("q")
+    if query:
+        all_comics = all_comics.filter(
+            Q(title__contains=query)
+        )
+    return render(request, 'szukaj_komiksy.html', {'all_comics': all_comics})
 
 
 def usun_komentarz2(request, comm_id):

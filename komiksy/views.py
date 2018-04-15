@@ -318,7 +318,7 @@ def rysuj(request):
 # stworzenie komiksów z wybranych Elementów
 def stworzone(request, elementy_id):
     try:
-        elementy = Elementy.objects.get(pk = elementy_id)
+        elementy = Elementy.objects.get(pk=elementy_id)
 
         im1 = Image.open(elementy.background)
         img1 = im1.resize((600, 600))
@@ -470,7 +470,7 @@ def uzytkownicy(request):
 
 def kolekcja(request):
     all_comics = Comic.objects.filter(publiczny=1)
-    comm = Comments.objects.filter(comic=all_comics)
+    comm = Comments.objects.all()
     query = request.GET.get("q")
     if query:
         all_comics = all_comics.filter(
@@ -528,7 +528,6 @@ def usun_komentarz2(request, comm_id):
     comm = Comments.objects.get(pk = comm_id)
     comm.delete()
     return render(request, 'usun_komentarz.html')
-
 
 
 class ComicCreate(CreateView):

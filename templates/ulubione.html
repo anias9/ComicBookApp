@@ -12,7 +12,7 @@
                 {{ forloop.counter }}.
                 <a href="{% url 'detail' comic.comic.id %} ">   <img src =  "{{ comic.comic.comics.url }}" class= "img responsive" height="200" width="200"> </a>
                 {{ comic.comic.title }}  {{ comic.comic.created }} <a href="{% url 'profil' comic.comic.owner.id %} " class = "user">{{ comic.comic.owner }}</a><br>
-                Liczba komentarzy: <span class="badge">{% get_comment_count for comic.comic as comment_count %} {{ comment_count }}</span>
+                Liczba komentarzy: <span class="badge"></span>
             </div>
         {%  endfor %}
     {% else %}

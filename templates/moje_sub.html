@@ -8,7 +8,9 @@
             <div class = "col-sm-4">
 
                 {{ forloop.counter }}.
-                <a href = "{% url 'profil' user.subscribed.id %}" class = "user"><span class="glyphicon glyphicon-user"></span> {{ user.subscribed.username }} </a><br>
+                <a href = "{% url 'profil' user.subscribed.id %}" class = "user">
+                    <span class="glyphicon glyphicon-user"></span> {{ user.subscribed.username }} </a>
+                <a href="{% url 'unsubscribe_user' user.subscribed.id %}"><span class="glyphicon glyphicon-remove"></span>Anuluj subskrypcje</a><br>
 
             </div>
         {%  endfor %}

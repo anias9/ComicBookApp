@@ -24,8 +24,9 @@
                         </a>
                     <figcaption>
                         {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
-                        Komentarzy: <span class="badge"></span><br>
-                      <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
+                        <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
+
+                        <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
                     </figcaption>
                     </figure>
 
@@ -36,7 +37,7 @@
                     </a>
                     <figcaption>
                         {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
-                        Komentarzy: <span class="badge"></span><br>
+                            <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
                         <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
                     </figcaption>
                 </figure>

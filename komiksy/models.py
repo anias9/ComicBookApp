@@ -48,7 +48,7 @@ class Subscription(models.Model):
 
 class Comments(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    comic = models.ForeignKey(Comic, on_delete=models.CASCADE)
+    comic = models.ForeignKey(Comic, on_delete=models.CASCADE, related_name='comments')
     created = models.DateTimeField('Data dodania', auto_now_add= True)
     text = models.CharField('Treść komentarza ', max_length = 100)
 

@@ -57,6 +57,16 @@ body {
     font-size: 30px;
 }
 
+.glyphicon.glyphicon-comment {
+    font-size: 50px;
+    size: 50px;
+}
+
+.glyphicon.glyphicon-thumbs-up {
+    font-size: 50px;
+    size: 50px;
+}
+
 #postacie-container {
     display: flex;
     font-size : 15px;

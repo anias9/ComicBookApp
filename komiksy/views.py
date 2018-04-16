@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from .forms import ComicForm, ElementsForm, CommentForm
+from .forms import ComicForm, ElementsForm, CommentForm, ComicUpdateForm
 from django.http import Http404
 from .models import Comic, User, Elementy, Favorite, Votes, Subscription, Comments
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from PIL import Image, ImageDraw, ImageFont
 from django.db.models import Q
 import uuid
@@ -552,6 +552,34 @@ def usun_komentarz2(request, comm_id):
     return render(request, 'usun_komentarz.html')
 
 
+def komiks_update(request, comic_id):
+    comic = Comic.objects.get(pk = comic_id)
+
+    form = ComicUpdateForm(request.POST or None, instance=comic)
+
+    if form.is_valid():
+        comic = form.save(commit=False)
+
+        comic.save()
+
+        return redirect('detail', comic_id)
+    else:
+        form = ComicUpdateForm()
+
+    return render(request,'komiks_update.html' , {'form': form})
+
+
+"""
+class ComicUpdateView(UpdateView):
+    form_class = ComicUpdateForm
+    template_name = 'komiks_update.html'
+    success_url = "/success/"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(pk=self.request.user)
+
+
 class ComicCreate(CreateView):
     model = Comic
     fields = ['comics', 'title', 'publiczny']
@@ -559,8 +587,7 @@ class ComicCreate(CreateView):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(ComicCreate, self).form_valid(form)
-
-
+"""
 
 
 

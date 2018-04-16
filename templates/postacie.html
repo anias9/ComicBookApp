@@ -6,8 +6,44 @@
 {% block content %}
     <span style="position:static; font-style: italic; font-weight: bold; font-size: 100%;">{% load static %}
 
+<div id="image-container">
+
+                <figure><label>
+                    <img src="{% static 'img/bg3.jpg' %}" width="300" height="300" class="img-responsive">
+                    <figcaption> Sklep</figcaption>
+                </label></figure>
+
+                <figure><label>
+                    <img src="{% static 'img/pg5.jpg' %}" width="300" height="300" class="img-responsive">
+                    <figcaption> Plaża
+                    </figcaption>
+               </label> </figure>
+
+                 <figure><label>
+                     <img src="{% static 'img/bg6.jpg' %}" width="300" height="300" class="img-responsive">
+                        <figcaption>
+                           Miasto
+                        </figcaption>
+                    </label></figure>
+
+                <figure><label>
+                    <img src="{% static 'img/zamek.png' %}" class="img-responsive" alt = "sss" width="300" height="300">
+                    <figcaption>
+                         Zamek
+                    </figcaption>
+                </label></figure>
+
+                <figure><label>
+                    <img src="{% static 'img/mountain.jpg' %}"  class="img-responsive" alt = "sss" width="300" height="300">
+                    <figcaption>
+                        <input type="radio" name="background"
+                               value="mountain.jpg"> Góry
+                    </figcaption>
+                </label></figure>
+        </div>
 
 
+    <h2>Bohaterowie</h2>
         <div id="image-container">
             <figure>
                 <a href = "{% url 'home' %}">

@@ -57,14 +57,15 @@ body {
     font-size: 30px;
 }
 
-.glyphicon.glyphicon-comment {
-    font-size: 30px;
-    size: 30px;
-}
-
 .glyphicon.glyphicon-thumbs-up {
     font-size: 50px;
     size: 50px;
+}
+
+.selectpicker {
+    width: 50px;
+    height: 50px;
+    size: 30px;
 }
 
 #postacie-container {
@@ -221,3 +222,4 @@ a.navbar-brand:hover{
 h3{
     font-size: 40px;
 }
+

@@ -19,3 +19,10 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comments
         fields = ('text', )
+
+
+class ComicUpdateForm(ModelForm):
+
+    class Meta:
+        model = Comic
+        fields = ('publiczny', 'title')

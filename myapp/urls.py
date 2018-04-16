@@ -47,6 +47,7 @@ urlpatterns = [
     re_path(r'^(?P<comic_id>[0-9]+)/subscribe_comic_owner/$', views.subscribe_comic_owner, name='subscribe_comic_owner'),
     re_path(r'^(?P<comic_id>[0-9]+)/unsubscribe_comic_owner/$', views.unsubscribe_comic_owner, name='unsubscribe_comic_owner'),
 
+    re_path(r'^(?P<comic_id>[0-9]+)/komiks_update/$', views.komiks_update, name='komiks_update'),
 
     re_path(r'^(?P<comic_id>[0-9]+)/delete_comic/$', views.delete_comic, name='delete_comic'),
     re_path(r'^(?P<elementy_id>[0-9]+)/delete_elementy/$', views.delete_elementy, name='delete_elementy'),
@@ -61,7 +62,7 @@ urlpatterns = [
     re_path(r'^profil/(?P<owner_id>[0-9]+)/$', views.profil, name='profil'),
     re_path(r'^stworzone/(?P<elementy_id>[0-9]+)/$', views.stworzone, name= 'stworzone'),
 
-    re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
+    #re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
 
     re_path(r'^moje_komentarze/$', views.moje_komentarze, name= 'moje_komentarze'),
     re_path(r'^postacie/$', views.postacie, name= 'postacie'),

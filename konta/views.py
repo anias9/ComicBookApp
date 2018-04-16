@@ -1,6 +1,5 @@
 from django.contrib.auth import login as auth_login
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .forms import SignUpForm, UserInformationUpdateForm
 from komiksy.models import Comic
 from django.contrib.auth.models import User
@@ -57,6 +56,6 @@ def zmiana_hasla(request):
         else:
             form = PasswordChangeForm(request.user)
         return render(request, 'zmiana_hasla.html', {
-        'form' : form
+        'form': form
     })
 

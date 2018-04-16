@@ -1,0 +1,20 @@
+{% extends "baza.html" %}
+
+{% block title %}Moje konto{% endblock %}
+{% block content %}
+    {% load staticfiles %}
+
+    <div class="col-md-12 text-left">
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="formularz">
+                {{ form}}
+            </div>
+            <button type="submit" class="zapisz">Zmień</button>
+        </form>
+    </div><br><br><br><br><br>
+
+
+
+
+{% endblock %}

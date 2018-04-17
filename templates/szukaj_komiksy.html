@@ -1,0 +1,63 @@
+{% extends "baza.html" %}
+{% block title %}Komiksy{% endblock %}
+
+{% block content %}
+
+    <div class = "col-lg-12">
+
+        <div id="image-container" >
+            {% if all_comics %}
+                {% for comic in all_comics %}
+                    {% if forloop.counter|divisibleby:"5"  %}
+                        </div>
+                        <div id="image-container" >
+                        <figure>
+                            <a href="{% url 'detail' comic.id %} ">
+                                <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "200" height="200">
+                            </a>
+                            <figcaption>
+                                {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
+                                <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
+
+                                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
+                            </figcaption>
+                        </figure>
+
+                    {% else %}
+                        <figure>
+                            <a href="{% url 'detail' comic.id %} ">
+                                <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "200" height="200">
+                            </a>
+                            <figcaption>
+                                {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} ">{{ comic.owner }}</a><br>
+                                <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
+                                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
+                            </figcaption>
+                        </figure>
+                    {% endif %}
+                {%  endfor %}<h2>    Szukaj ponownie:</h2>
+
+            <form role="search" method="get" action="{% url 'szukaj_komiksy' %}">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Wpisz tytuł komiksu">
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
+                </div>
+            </form>
+            </div>
+            {% else %}
+                Nie ma komiksów o podanym tytule<br><br/>
+                <h2>    Spróbuj ponownie:</h2>
+
+                <form role="search" method="get" action="{% url 'szukaj_komiksy' %}">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Wpisz tytuł komiksu">
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
+                </div>
+                </form>
+
+
+            {% endif %}
+    </div>
+
+
+{% endblock %}

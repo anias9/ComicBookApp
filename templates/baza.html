@@ -28,10 +28,10 @@
 
 
 
-    <nav class="navbar navbar-expand-sm" style="background-color: #b2322d; font-size: 50px;">
+    <nav class="navbar navbar-expand-sm">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'img/logo2.png' %}" class="img-responsive" align="lefttra">
+                <img src="{% static 'img/komik2.png' %}" class="img-responsive" align="left" >
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,6 +40,7 @@
 
                 <form class="form-inline ml-auto">
                     <div class = "pos" >
+
                     <a href="{% url 'rysuj' %}" class="btn"><span class="glyphicon glyphicon-plus"></span> Komiks</a>
                     <a href="{% url 'postacie' %}" class="btn  ml-2"><span class="glyphicon glyphicon-star"></span> Bohaterowie</a>
                     <a href="{% url 'kolekcja' %}" class="btn  ml-2"><i class="glyphicon glyphicon-picture"></i> Komiksy</a>

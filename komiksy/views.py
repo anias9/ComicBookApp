@@ -37,6 +37,18 @@ def detail(request, comic_id):
         form = CommentForm(request.POST)
         all_comments = Comments.objects.filter(comic = comic)
 
+        if request.method == 'POST':
+            form.instance.text = request.POST.get('text', None)
+            form.instance.comic = comic
+            form.instance.author = request.user
+
+            if form.is_valid():
+                form.save()
+
+                return redirect('detail', comic_id)
+            else:
+                form = CommentForm()
+
         if request.user.is_authenticated:
             f = Favorite.objects.filter(uzytkownik=request.user, comic= comic)
             l = Votes.objects.filter(uzytkownik=request.user, comic= comic)
@@ -180,7 +192,7 @@ def detail(request, comic_id):
                 }
                 return render(request, 'detail.html', context)
 
-            elif sub.count() > 0 :
+            elif sub.count() > 0:
                 subs = Subscription.objects.get(subscribed=subscribed, subscriber=request.user)
                 context = {
                     'comic': comic,
@@ -215,18 +227,6 @@ def detail(request, comic_id):
                     'all_comments': all_comments,
                 }
                 return render(request, 'detail.html', context)
-
-        if request.method == 'POST':
-            form.instance.text = request.POST.get('text', None)
-            form.instance.comic = comic
-            form.instance.author = request.user
-
-            if form.is_valid():
-                form.save()
-
-                return redirect('detail', comic_id)
-            else:
-                form = CommentForm()
 
     except Comic.DoesNotExist:
         raise Http404("Podany komiks nie istnieje")
@@ -367,7 +367,7 @@ def stworzone(request, elementy_id):
             t2 = "Wprowadzony\ntekst jest za dlugi.\nProszę spróbować\nponownie"
 
         draw = ImageDraw.Draw(img1)
-        font = ImageFont.truetype('/home/ichiraku/Downloads/abhaya-libre/AbhayaLibre-Regular.ttf', 25)
+        font = ImageFont.truetype('/home/ichiraku/Downloads/abhaya-libre/AbhayaLibre-Regular.ttf', 30)
         draw.text((60, 100), t, (0, 0, 0), font=font)
         draw.text((320, 100), t2, (0, 0, 0), font=font)
 
@@ -500,10 +500,6 @@ def home(request):
     return render(request, 'home.html', {'last_comics': last_comics, 'all_comics': all_comics})
 
 
-def postacie(request):
-    return render(request, 'postacie.html')
-
-
 # 10 najlepszych komiksów, sortowne od największej ilości lajkow
 def najlepsze(request):
     comics = Comic.objects.filter(publiczny=1, likes__gt=0).order_by('-likes')[:10]
@@ -532,8 +528,9 @@ def moje_komentarze(request):
 
 def usun_komentarz(request, comm_id):
     comm = Comments.objects.get(pk = comm_id)
+    comic = Comic.objects.get(pk = comm.comic.id)
     comm.delete()
-    return render(request, 'usun_komentarz.html')
+    return redirect('detail', comic.id)
 
 
 def szukaj_komiksy(request):
@@ -566,7 +563,12 @@ def komiks_update(request, comic_id):
     else:
         form = ComicUpdateForm()
 
-    return render(request,'komiks_update.html' , {'form': form})
+    context = {
+        'form': form,
+        'comic': comic,
+    }
+
+    return render(request,'komiks_update.html' , context)
 
 
 """

@@ -4,7 +4,19 @@
 {% block content %}
     {% load staticfiles %}
 
-    <div class="col-md-12 text-left">
+    <a href = "{% url 'detail' comic.id %}">
+        <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
+    </a>
+
+    Tytuł : {{ comic.title }}<br>
+    Status:
+    {% if comic.publiczny %}
+        Publiczny<br>
+    {% else %}
+        Prytwany <br>
+    {% endif %}
+    <p style="font-size: 15px">Zostaw puste, aby zostawić ten sam tytuł </p>
+    <div class="col-md-12">
         <form method="post" novalidate>
             {% csrf_token %}
             <div class="formularz">
@@ -12,9 +24,7 @@
             </div>
             <button type="submit" class="zapisz">Zmień</button>
         </form>
-    </div><br><br><br><br><br>
-
-
+    </div>
 
 
 {% endblock %}

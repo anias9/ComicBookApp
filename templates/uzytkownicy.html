@@ -3,8 +3,7 @@
 {% block title %}Moje konto{% endblock %}
 {% block content %}
 
-<h1>Użytkownicy</h1>
-    <div class = "col-sm-12">
+
     <form role="search" method="get" action="{% url 'uzytkownicy' %}">
         <div class="col-sm-2">
             <input type="text" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Znajdź użytkownika" style="">
@@ -12,34 +11,27 @@
         </div>
     </form>
         <br>
-        <br>
-        <br>
 
-<br>
-    <div class = "col-sm-2">
-        {% if users %}
-                {% for user in users %}
-                    {% if forloop.counter|divisibleby:"4"  %}
-                    </div>
-                    <div class = "col-sm-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="image-container" >
+            {% if users %}
+                    {% for user in users %}
+                        <div class = "col-sm-4">
+                            <a href = "{% url 'profil' user.id %}" class = "user">
+                                <span class="glyphicon glyphicon-user"></span> {{ user.username }} </a>
+                        </div>
 
-                    {{ forloop.counter }}.
-                        <a href = "{% url 'profil' user.id %}" class = "user"><span class="glyphicon glyphicon-user"></span> {{ user.username }} </a>
-
-                    {% else %}
-                        {{ forloop.counter }}.
-                        <a href = "{% url 'profil' user.id %}" class = "user"><span class="glyphicon glyphicon-user"></span> {{ user.username }} </a>
-
-                    </div>
-                    {% endif %}
-                {%  endfor %}
-             </div>
-        </div>
-            {% else %}
-            <div class = "col-sm-4">
-                <h2>Nie znaleziono użytkownika</h2>
+                    {%  endfor %}
+                 </div>
             </div>
-    {% endif %}
-    </div>
-    <br><br>
+                {% else %}
+                <div class = "col-sm-4">
+                    <h2>Nie znaleziono użytkownika</h2>
+                </div>
+        {% endif %}
+        </div>
+
+
+
 {% endblock %}

@@ -25,4 +25,4 @@ class ComicUpdateForm(ModelForm):
 
     class Meta:
         model = Comic
-        fields = ('publiczny', 'title')
+        fields = ('publiczny',)

@@ -20,6 +20,8 @@
                         Prytwany <br>
                     {% endif %}
                     <a href = "{% url 'delete_comic' comic.id %}"><i class="glyphicon glyphicon-trash"></i> usuń </a>
+                    <a href = "{% url 'komiks_update' comic.id %}"><i class="glyphicon glyphicon-adjust"></i> modyfikuj </a>
+
             {% endfor %}
         {% else %}
             Nie masz żadnych komiksów

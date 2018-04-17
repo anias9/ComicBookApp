@@ -4,24 +4,22 @@
 
 {% block content %}
 
-    <br>
-
-    Komiksy użytkownika: {{ owner }}<br>
+    <h3>Komiksy użytkownika: {{ owner }}</h3>
 
     {# Subsrypcja twórcy komiksu, anulowanie subskrypcji  #}
     {% if user.is_authenticated %}
         {% if user.id != owner.id and subs.id > 0 %}
-            <a href="{% url 'unsubscribe_user' owner.id %}">Anuluj subsypcje</a><br>
+            <h4>Subskrybujesz</h4>
+            <a href="{% url 'unsubscribe_user' owner.id %}">Anuluj subskrypcje</a><br>
         {% elif user.id != owner.id %}
             <a href="{% url 'subscribe_user' owner.id %}">Subskrybuj</a>
         {% endif %}
     {% endif %}
 
-
+    <div id="image-container" >
     {% if comics %}
         {% for comic in comics %}
             <br>
-
             {% if user.id == owner.id  %}
             {{ forloop.counter }}. <a href="{% url 'detail' comic.id %} ">
             <img src =  "{{ comic.comics.url }}" class= "img responsive" width = "100" height="100"></a>
@@ -31,13 +29,18 @@
 
                 {% elif comic.publiczny %}
 
-                <a href="{% url 'detail' comic.id %} ">
-                <img src =  "{{ comic.comics.url }}" class= "img responsive" width = "100" height="100"></a>
-                {{ comic.created }}
+                <figure>
+                    <a href="{% url 'detail' comic.id %} ">
+                        <img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "150" height="150">
+                    </a>
+                    <figcaption>
+                        {{ comic.title }}
+                    </figcaption>
+                </figure>
             {% endif %}
 
         {% endfor %}
-
+        </div>
     {% else %}
         Użytkownik nie ma żadnych komiksów
     {% endif %}

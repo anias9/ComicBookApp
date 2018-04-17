@@ -3,48 +3,58 @@
 
 {% block content %}
 
-
-
         <a href = "{% url 'detail' comic.id %}">
             <img src =  "{{ comic.comics.url }}" class= "img responsive" height="400" width="400"><br>
         </a>
+
+    {# Pobieranie komiksu #}
+    <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
+        <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
 
     {# Usuwanie dla twórców, dodawanie do ulubionych i usuwanie z ulubionych dla innych użytkowników #}
     {% if user.is_authenticated %}
         {% if user.id == comic.owner.id %}
             <a href = "{% url 'delete_comic' comic.id %}">
                 <span class="glyphicon glyphicon-trash"></span> usuń</a>
+            <a href = "{% url 'komiks_update' comic.id %}">
+                <i class="glyphicon glyphicon-adjust"></i> zmień status </a>
+            {% if comic.publiczny %}
+                Publiczny<br>
+            {% else %}
+                Prytwany <br>
+            {% endif %}
+
         {% else  %}
             {% if fav.id > 0 %}
-                <span class="glyphicon glyphicon-heart" style="color: #ac2925; font-size: 50px" ></span> <p>Ulubiony</p><a href="{% url 'unfavorite' comic.id %}">Usuń z ulubionych</a><br>
+                <span class="glyphicon glyphicon-heart" style="color: #ac2925; font-size: 50px" ></span> Ulubiony
+                <a href="{% url 'unfavorite' comic.id %}" style="font-size: 15px">Usuń z ulubionych</a>
             {% else %}
-                <a href="{% url 'favorite' comic.id %}"><span class="glyphicon glyphicon-heart-empty" style="color: #ac2925; font-size: 50px"></span> Dodaj do ulubionych</a><br>
+                <a href="{% url 'favorite' comic.id %}">
+                    <span class="glyphicon glyphicon-heart-empty" style="color: #ac2925; font-size: 50px"></span>
+                    Dodaj do ulubionych</a>
             {% endif %}
             {% if likes.id > 0 %}
-                <span class="glyphicon glyphicon-thumbs-down" style="font-size: 50px" ></span>Jednak nie<a href="{% url 'unlike' comic.id %}"> lajkuje</a><br>
+                Głos oddany <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span>
+                <a href="{% url 'unlike' comic.id %}" style="font-size: 15px"> Cofnij głos</a>
             {% else %}
-                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Polajkuj</a><br>
+                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Głosuję</a>
             {% endif %}
         {% endif %}
     {% endif %}
 
 
-    {# Pobieranie komiksu #}
-    <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
-        <span class="glyphicon glyphicon-download"></span> Pobierz</a><br>
-
 
     {# Dane komiksu #}
-    Tytuł : {{ comic.title }} <br>
-    Data utworzenia: {{ comic.created }}<br>
-    Lajki : {{ comic.likes }}<br>
+    <p>Tytuł : {{ comic.title }} </p>
+    <p>Data utworzenia: {{ comic.created }}</p>
+    <p>Głosy : {{ comic.likes }}</p>
     Twórca: <a href = "{% url 'profil' comic.owner.id %}" class = "user" >{{ comic.owner }} </a>
 
 
     {# Subsrypcja twórcy komiksu, anulowanie subskrypcji  #}
     {% if user.is_authenticated %}
         {% if user.id != comic.owner.id and subs.id > 0 %}
-            <a href="{% url 'unsubscribe_comic_owner' comic.id %}">Anuluj subsypcje</a><br>
+            <a href="{% url 'unsubscribe_comic_owner' comic.id %}">Anuluj subskrypcję</a><br>
         {% elif user.id != comic.owner.id %}
             <a href="{% url 'subscribe_comic_owner' comic.id %}">Subskrybuj</a>
         {% endif %}
@@ -60,8 +70,8 @@
         <div class = "system-message">
 
             Treść : {{ comment.text }}<br>
-            Autor : <a href = "{% url 'profil' comment.author.id %}">{{ comment.author }}</a><br>
-            Data dodania {{ comment.created }}<br>
+            <p style="font-size: 20px"> Autor : <a href = "{% url 'profil' comment.author.id %}">{{ comment.author }}</a></p>
+            <p style="font-size: 20px">Data dodania {{ comment.created }}</p>
             {% if comment.author.id == user.id %}
                 <a href="{% url 'usun_komentarz' comment.id %} ">
                     <span class="glyphicon glyphicon-remove" style="color: #000000; font-size: 50px" ></span>Usuń komentarz

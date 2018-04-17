@@ -65,7 +65,6 @@ urlpatterns = [
     #re_path(r'^comic_form/$', views.ComicCreate.as_view(), name= 'comic_form'),
 
     re_path(r'^moje_komentarze/$', views.moje_komentarze, name= 'moje_komentarze'),
-    re_path(r'^postacie/$', views.postacie, name= 'postacie'),
     re_path(r'^ulubione/$', views.ulubione, name= 'ulubione'),
     re_path(r'^polubione/$', views.polubione, name= 'polubione'),
     re_path(r'^kolekcja/$', views.kolekcja, name= 'kolekcja'),

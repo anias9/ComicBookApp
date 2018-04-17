@@ -3,58 +3,52 @@
 
     {% block content %}
         {% load static %}
-<br>
 
-        <form role="search" method="get" action="{% url 'szukaj_komiksy' %}">
-            <div class="col-sm-2">
-                <input type="text" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Wpisz tytuł komiksu">
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
-            </div>
-        </form>
+
+        {% if user.is_authenticated  %}
+            <h1>Witaj {{ user.username }}! </h1>
+
+        {% else %}
+            <h1>Witaj na stronie to tworzenia komiksów! </h1>
+        {% endif %}
+
 
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-md-4">
+
                     {% if last_comics %}
                         {% for comic in last_comics %}Ostatnio dodany komiks
+                            Autor: <a href="{% url 'profil' comic.owner.id %} " class = "user">{{ comic.owner }}</a>
+
                             <a href="{% url 'detail' comic.id %} ">
                                 <figure>
                                     <img src =  "{{ comic.comics.url }}" class= "img-responsive" ></figure>
                             </a>
-                                    <figcaption>
-                                       Tytuł: {{ comic.title }} <br>
-                                        Data dodania: {{ comic.created }} <br>
-                                        Autor: <a href="{% url 'profil' comic.owner.id %} " class = "user">{{ comic.owner }}</a><br>
-                                        <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
+                            <figcaption>
+                                Tytuł: {{ comic.title }} <br>
+                                Data dodania: {{ comic.created }} <br>
+                                <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
 
-                                        <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
-                                    </figcaption>
+                                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
+                            </figcaption>
                             <br>
                         {%  endfor %}
 
                     {% else %}
-                        <h2>Brak komiksów</h2>
+                        <h2>Brak komiksów w bazie</h2>
                     {% endif %}
-                </div>
-
-                <div class="col-md-4">Bohaterowie
-                    <a href="{% url 'postacie' %} ">
-                        <figure>
-                            <img src =  "{% static 'img/postacie/miks.png' %}" class= "img-responsive" height="600" width="600" >
-                            <figcaption>Zobacz dostępne postacie</figcaption>
-                        </figure>
-                    </a>
                 </div>
 
                 <div class="col-md-4">
                     <a href="{% url 'rysuj' %} ">
                         <figure>
-                            <img src =  "{% static 'img/postacie/stworz1.png' %}" class= "img-responsive" >
-
+                            <img src =  "{% static 'img/postacie/miks.png' %}" class= "img-responsive" height="600" width="600" >
+                            <figcaption><img src =  "{% static 'img/postacie/stworz1.png' %}" class= "img-responsive" ></figcaption>
                         </figure>
                     </a>
                 </div>
             </div>
         </div>
-        <br><br><br><br><br>
     {% endblock %}

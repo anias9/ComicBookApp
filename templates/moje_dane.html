@@ -3,11 +3,11 @@
 {% block title %}Moje konto{% endblock %}
 {% block content %}
     {% load staticfiles %}
-<br>
+    <h1>Zmień dane</h1>
     <div class="col-md-12 text-left">
-        <h2>Twoja nazwa użytkownika: <b>{{ user}}</b></h2>
-        <h2>Adres email: <b>{{ user.email }} </b></h2>
-        <h2>Data utworzenia konta: <b>{{ user.date_joined}}</b> </h2>
+        <h3>Twoja nazwa użytkownika: <b>{{ user}}</b></h3>
+        <h3>Adres email: <b>{{ user.email }} </b></h3>
+        <h3>Data utworzenia konta: <b>{{ user.date_joined}}</b> </h3>
     </div>
     <div class="col-md-12 text-left">
             <form method="post" novalidate>
@@ -17,7 +17,7 @@
                 </div>
                 <button type="submit" class="zapisz">Zmień</button>
             </form>
-    </div><br><br><br><br><br>
+    </div>
 
 
     <div class="col-sm-12">

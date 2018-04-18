@@ -11,15 +11,15 @@
 
 .navbar-expand-sm{
     font-size: 50px;
-    background: linear-gradient(#e2d940, #5b1907);
+    background-image: url(../img/background8.jpg);
     -webkit-background-size: cover;
 }
 
 body {
-    background: radial-gradient(circle, #95ff1a, #12871a);
+    background: radial-gradient(circle, #ff760c, #d70010);
     -webkit-background-size: cover;
     text-align: center;
-    color : #900200;
+    color : #000000;
     font-size : 30px;
     font-family: 'Patrick Hand SC', cursive;
     margin-bottom: 60px;
@@ -34,7 +34,7 @@ html {
 
 .btn{
     font-size: 25px;
-    background-color: #d48600;
+    background-color: #e2d940;
     border: solid;
     color: #b50b00;
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
@@ -43,7 +43,7 @@ html {
 
 .btn-primary{
     width: 170px;
-    color: #bcc200;
+    color: #e2d940;
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     font-size : 20px;
 }
@@ -61,7 +61,7 @@ html {
 
 #comment{
     background-color: #3c3c3c;
-    color: #ff8d07;
+    color: #000000;
     font-size: 50px;
 }
 
@@ -108,7 +108,7 @@ html {
 div.fields-title {
     font-size: 10px;
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    color: #ff920b;
+    color: #000000;
     size:  40px;
 }
 
@@ -169,7 +169,7 @@ input[type=radio]
 p {
     display: block;
     text-align: center;
-    color: #ff8d07;
+    color: #000000;
     font-size: 25px;
 }
 
@@ -215,11 +215,11 @@ ul.dropdown-menu.inner{
 }
 
 a:hover{
-    color: #ff00b6;
+    color: #00ff07;
 }
 
 a {
-    color: #d70010;
+    color: #1b25d7;
 }
 
 .users{
@@ -228,11 +228,11 @@ a {
 }
 
 a.user:hover {
-    color: #ff8d07;
+    color: #5bb523;
 }
 
 a.user{
-    color: #eb3f00;
+    color: #003a09;
 }
 
 a.pobierz{
@@ -249,7 +249,7 @@ a.navbar-brand{
 }
 
 a.navbar-brand:hover{
-    color: #f95aff;
+    color: #2eff11;
 }
 
 h3{

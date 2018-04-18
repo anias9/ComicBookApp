@@ -490,14 +490,17 @@ def kolekcja(request):
 
 def home(request):
     last_comics = Comic.objects.filter(publiczny=1)[:1]
-    all_comics = Comic.objects.filter(publiczny=1)
-    query = request.GET.get("q")
-    if query:
-        all_comics = all_comics.filter(
-            Q(title__contains=query)
-            )
-
-    return render(request, 'home.html', {'last_comics': last_comics, 'all_comics': all_comics})
+    if request.user.is_authenticated:
+        owner_comics = Comic.objects.filter(owner = request.user).order_by('-likes')[:5]
+        context = {
+                'last_comics': last_comics,
+                'owner_comics': owner_comics,
+            }
+    else:
+        context = {
+            'last_comics': last_comics,
+        }
+    return render(request, 'home.html', context)
 
 
 # 10 najlepszych komiksów, sortowne od największej ilości lajkow

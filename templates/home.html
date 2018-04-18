@@ -4,20 +4,38 @@
     {% block content %}
         {% load static %}
 
-
+<div class = container-fluid>
+    <div class = "row">
+        <div  class="col-sm-4">
         {% if user.is_authenticated  %}
             <h1>Witaj {{ user.username }}! </h1>
 
+            <p>Twoje najlepiej ocenione komiksy:</p>
+
+                {% if owner_comics %}
+                {% for comic in owner_comics %}
+
+                    <figure>
+                        <a href="{% url 'detail' comic.id %} ">
+                            {{ forloop.counter }}. miejsce<img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "300" height="150">
+                        </a>
+                        <figcaption>
+                            <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
+                        </figcaption>
+                    </figure>
+
+                {%  endfor %}
+
+            {% else %}
+                <h2>Brak komiksów w bazie</h2>
+            {% endif %}
         {% else %}
             <h1>Witaj na stronie to tworzenia komiksów! </h1>
         {% endif %}
-
-
-        <div class="container-fluid">
-            <div class="row">
-
-                <div class="col-md-4">
-
+        </div>
+                <div class="col-sm-4">
+                </div>
+                    <div class="col-sm-4">
                     {% if last_comics %}
                         {% for comic in last_comics %}Ostatnio dodany komiks
                             Autor: <a href="{% url 'profil' comic.owner.id %} " class = "user">{{ comic.owner }}</a>
@@ -40,15 +58,6 @@
                         <h2>Brak komiksów w bazie</h2>
                     {% endif %}
                 </div>
-
-                <div class="col-md-4">
-                    <a href="{% url 'rysuj' %} ">
-                        <figure>
-                            <img src =  "{% static 'img/postacie/miks.png' %}" class= "img-responsive" height="600" width="600" >
-                            <figcaption><img src =  "{% static 'img/postacie/stworz1.png' %}" class= "img-responsive" ></figcaption>
-                        </figure>
-                    </a>
-                </div>
-            </div>
-        </div>
+     </div>
+</div>
     {% endblock %}

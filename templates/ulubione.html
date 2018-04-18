@@ -14,6 +14,7 @@
                 {{ comic.comic.title }}  {{ comic.comic.created }} <a href="{% url 'profil' comic.comic.owner.id %} " class = "user">{{ comic.comic.owner }}</a><br>
                 <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comic.comments.count }} </span>
                 <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.comic.likes }}
+                <a href="{% url 'unfavorite_profil' comic.comic.id %}"><span class="glyphicon glyphicon-remove"></span>Usuń z ulubionych</a><br>
 
             </div>
         {%  endfor %}

@@ -437,6 +437,12 @@ def unfavorite(request, comic_id):
     return redirect('detail', comic_id)
 
 
+def unfavorite_profil(request, comic_id):
+    comic = Comic.objects.get(pk=comic_id)
+    f1 = Favorite.objects.get(uzytkownik=request.user, comic= comic)
+    f1.delete()
+    return redirect('ulubione')
+
 def subscribe_user(request, owner_id):
     subscribed = User.objects.get(pk=owner_id)
     sub = Subscription.objects.filter(subscribed=subscribed, subscriber=request.user)
@@ -491,7 +497,7 @@ def kolekcja(request):
 def home(request):
     last_comics = Comic.objects.filter(publiczny=1)[:1]
     if request.user.is_authenticated:
-        owner_comics = Comic.objects.filter(owner = request.user).order_by('-likes')[:5]
+        owner_comics = Comic.objects.filter(owner = request.user, likes__gt=0).order_by('-likes')[:3]
         context = {
                 'last_comics': last_comics,
                 'owner_comics': owner_comics,
@@ -533,7 +539,7 @@ def usun_komentarz(request, comm_id):
     comm = Comments.objects.get(pk = comm_id)
     comic = Comic.objects.get(pk = comm.comic.id)
     comm.delete()
-    return redirect('detail', comic.id)
+    return redirect('moje_komentarze')
 
 
 def szukaj_komiksy(request):

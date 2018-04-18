@@ -34,15 +34,13 @@
                     Dodaj do ulubionych</a>
             {% endif %}
             {% if likes.id > 0 %}
-                Głos oddany <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span>
-                <a href="{% url 'unlike' comic.id %}" style="font-size: 15px"> Cofnij głos</a>
+                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span> Głos oddany
+                <a href="{% url 'unlike' comic.id %}" style="font-size: 15px"> <span class="glyphicon glyphicon-thumbs-down" style="font-size: 20px" ></span>Cofnij głos</a>
             {% else %}
                 <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px" ></span><a href="{% url 'like' comic.id %}">Głosuję</a>
             {% endif %}
         {% endif %}
     {% endif %}
-
-
 
     {# Dane komiksu #}
     <p>Tytuł : {{ comic.title }} </p>
@@ -81,7 +79,6 @@
         <hr>
     {% endfor %}
     </div>
-
 
     {# Dodawanie komentarzy #}
     {% if user.is_authenticated %}

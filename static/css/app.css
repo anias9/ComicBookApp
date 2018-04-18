@@ -33,12 +33,14 @@ html {
 
 
 .btn{
-    font-size: 25px;
+    font-size: 18px;
     background-color: #e2d940;
     border: solid;
     color: #b50b00;
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-
+    text-align: center;
+    text-decoration: dotted;
+    display: inline-block;
 }
 
 .btn-primary{
@@ -227,12 +229,20 @@ a {
     font-size: 50px;
 }
 
+a.rysuj{
+    color: #ffe81f;
+}
+
+a.rysuj:hover{
+    color: #d40010;
+}
+
 a.user:hover {
     color: #5bb523;
 }
 
 a.user{
-    color: #003a09;
+    color: #2eff11;
 }
 
 a.pobierz{
@@ -274,4 +284,9 @@ h1 {
     height: 60px;
     background-image: url(../img/background8.jpg);
     display: block;
+}
+
+ul {
+    display: block;
+    text-align: left;
 }

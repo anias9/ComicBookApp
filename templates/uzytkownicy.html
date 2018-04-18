@@ -17,11 +17,18 @@
                 <div id="image-container" >
             {% if users %}
                     {% for user in users %}
+                        {% if forloop.counter|divisibleby:"5"  %}
+                        </div>
                         <div class = "col-sm-4">
                             <a href = "{% url 'profil' user.id %}" class = "user">
                                 <span class="glyphicon glyphicon-user"></span> {{ user.username }} </a>
                         </div>
-
+                            {% else %}
+                            <div class = "col-sm-4">
+                                <a href = "{% url 'profil' user.id %}" class = "user">
+                                    <span class="glyphicon glyphicon-user"></span> {{ user.username }} </a>
+                            </div>
+                {% endif %}
                     {%  endfor %}
                  </div>
             </div>

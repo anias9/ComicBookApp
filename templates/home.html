@@ -6,18 +6,16 @@
 
 <div class = container-fluid>
     <div class = "row">
-        <div  class="col-sm-4">
+        <div  class="col-sm-8">
         {% if user.is_authenticated  %}
             <h1>Witaj {{ user.username }}! </h1>
-
             <p>Twoje najlepiej ocenione komiksy:</p>
-
                 {% if owner_comics %}
                 {% for comic in owner_comics %}
 
                     <figure>
                         <a href="{% url 'detail' comic.id %} ">
-                            {{ forloop.counter }}. miejsce<img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "300" height="150">
+                            {{ forloop.counter }}. miejsce<img src =  "{{ comic.comics.url }}" class= "img-responsive"  width = "300" height="150" style = "margin: 0 auto;">
                         </a>
                         <figcaption>
                             <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
@@ -27,14 +25,28 @@
                 {%  endfor %}
 
             {% else %}
-                <h2>Brak komiksów w bazie</h2>
+                <h2>Niestety żaden z Twoich komiksów nie został jeszcze oceniony :(</h2>
             {% endif %}
         {% else %}
-            <h1>Witaj na stronie to tworzenia komiksów! </h1>
+            <div class = "col-sm-12">
+                <h1>Witaj na stronie do <a href="{% url 'rysuj' %}" class = "rysuj">tworzenia komiksów! </a></h1>
+                 <a href="{% url 'logowanie' %}">Zaloguj się</a>, aby zyskać takie korzyści jak:
+                    <ul>
+                        <li>Zapisywanie komiksów w aplikacji</li>
+                            <ul>
+                                <li>Nadanie tytułu</li>
+                                <li>Rodzaj statusu: prywatny albo publiczny</li>
+                            </ul>
+                        <li>Komentowanie komiksów</li>
+                        <li>Głosowanie na najlepsze komiksy</li>
+                        <li>Subskrypcja ulubionych twórców</li>
+                        <li>Wybieranie ulubionych komiksów</li>
+                    </ul>
+
+            </div>
         {% endif %}
         </div>
-                <div class="col-sm-4">
-                </div>
+
                     <div class="col-sm-4">
                     {% if last_comics %}
                         {% for comic in last_comics %}Ostatnio dodany komiks

@@ -15,12 +15,17 @@
                     <img src =  "{{ comic.comics.url }}" width = "100" height="100"></a>
                     Data utworzenia: {{ comic.created }} <br>
                     {% if comic.publiczny %}
-                        Publiczny<br>
-                        {% else %}
-                        Prytwany <br>
+                        Publiczny
+                        <a href = "{% url 'komiks_update' comic.id %}"><i class="glyphicon glyphicon-adjust"></i> Zmień </a>
+                        <br>
+                    {% else %}
+                        Prytwany
+                        <a href = "{% url 'komiks_update' comic.id %}"><i class="glyphicon glyphicon-adjust"></i> Zmień </a>
+                        <br>
                     {% endif %}
+                <a href="{{ comic.comics.url }}"  download="{{ comic.comics.url }}" class="pobierz">
+                    <span class="glyphicon glyphicon-download"></span> Pobierz</a>
                     <a href = "{% url 'delete_comic' comic.id %}"><i class="glyphicon glyphicon-trash"></i> usuń </a>
-                    <a href = "{% url 'komiks_update' comic.id %}"><i class="glyphicon glyphicon-adjust"></i> modyfikuj </a>
 
             {% endfor %}
         {% else %}

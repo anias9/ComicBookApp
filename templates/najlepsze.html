@@ -10,7 +10,7 @@
             <div class="col-sm-6">
                 {{ forloop.counter }}.
                 <a href="{% url 'detail' comic.id %} ">   <img src =  "{{ comic.comics.url }}" class= "img responsive" height="200" width="200"> </a>
-                {{ comic.title }}  {{ comic.created }} <a href="{% url 'profil' comic.owner.id %} " class = "user">{{ comic.owner }}</a><br>
+                {{ comic.title }} <br><a href="{% url 'profil' comic.owner.id %} " class = "user">{{ comic.owner }}</a><br>
                 <span class="glyphicon glyphicon-comment"></span> <span class="badge"> {{ comic.comments.count }} </span>
                 <span class="glyphicon glyphicon-thumbs-up" style="font-size: 20px" ></span> {{ comic.likes }}
             </div>

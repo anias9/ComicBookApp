@@ -13,19 +13,19 @@
         <div id="image-container">
 
                 <figure><label>
-                    <img src="{% static 'img/bg3.jpg' %}" width="300" height="300" class="img-responsive">
+                    <img src="{% static 'img/bg3.jpg' %}" class="img-responsive" width="300" height="300" >
                     <figcaption><input type="radio" name="background" value="bg3.jpg" checked> Sklep</figcaption>
                 </label></figure>
 
                 <figure><label>
-                    <img src="{% static 'img/pg5.jpg' %}" width="300" height="300" class="img-responsive">
+                    <img src="{% static 'img/pg5.jpg' %}" class="img-responsive" width="300" height="300" >
                     <figcaption><input type="radio" name="background"
                                         value="pg5.jpg"> Plaża
                     </figcaption>
                </label> </figure>
 
                  <figure><label>
-                     <img src="{% static 'img/bg6.jpg' %}" width="300" height="300" class="img-responsive">
+                     <img src="{% static 'img/bg6.jpg' %}" class="img-responsive" width="300" height="300" >
                         <figcaption>
                             <input type="radio" name="background" value="bg6.jpg"> Miasto
                         </figcaption>
@@ -145,11 +145,11 @@
 
  <div class="row">
         <div class = "col-lg-6">
-            <textarea class = "tekst" name="text1"  style="width: 150px; height: 100px" placeholder="Tekst pierwszego bohatera" required>{{ text1 }}</textarea>
+            <textarea class = "tekst" name="text1" style="background-color: #9d210a; color: #2afffc; width: 220px; height: 100px" placeholder="Tekst pierwszego bohatera" maxlength="70" required>{{ text1 }}</textarea>
          </div>
 
          <div class = "col-sm-6">
-             <textarea class = "tekst" name="text2"  style="width: 150px; height: 100px" placeholder="Tekst drugiego bohatera" required>{{ text2 }}</textarea>
+             <textarea class = "tekst" name="text2"  style="background-color: #9d210a; color: #2afffc; width: 220px; height: 100px" placeholder="Tekst drugiego bohatera" maxlength="70" required>{{ text2 }}</textarea>
          </div>
 </div>
 

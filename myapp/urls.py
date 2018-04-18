@@ -42,6 +42,7 @@ urlpatterns = [
     re_path(r'^(?P<comic_id>[0-9]+)/$', views.detail, name='detail'),
     re_path(r'^(?P<comic_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
     re_path(r'^(?P<comic_id>[0-9]+)/unfavorite/$', views.unfavorite, name='unfavorite'),
+    re_path(r'^(?P<comic_id>[0-9]+)/unfavorite_profil/$', views.unfavorite_profil, name='unfavorite_profil'),
     re_path(r'^(?P<comic_id>[0-9]+)/like/$', views.like, name='like'),
     re_path(r'^(?P<comic_id>[0-9]+)/unlike/$', views.unlike, name='unlike'),
     re_path(r'^(?P<comic_id>[0-9]+)/subscribe_comic_owner/$', views.subscribe_comic_owner, name='subscribe_comic_owner'),

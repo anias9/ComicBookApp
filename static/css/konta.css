@@ -4,5 +4,5 @@ body {
 
 
 .card{
-    background-color: #d40010;
+    background: radial-gradient(circle, #375d0d, #55d76b);
 }

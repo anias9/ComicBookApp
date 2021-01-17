@@ -1,5 +1,5 @@
 # kmx
-Django2.0 / Web app to create comics
+Django Web application to create comics made as practical part for bachelor's thesis.
 
 
 # Introduction
